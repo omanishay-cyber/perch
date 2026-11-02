@@ -211,7 +211,21 @@
         img.className = "shot-img"; img.alt = ""; img.decoding = "async"; img.loading = "lazy";
         img.src = "assets/shots/" + name;
         scene.appendChild(img);
+        scene.shotImg = img;
+        scene.shotReady = m.ready;
       });
     }).catch(function () {});
   }
+  /* A scene with data-shot-<state> files shows the picture of the state its buttons chose. */
+  function showShot(scene, state) {
+    if (!scene || !scene.shotImg) return;
+    var name = scene.getAttribute("data-shot-" + state);
+    if (name && scene.shotReady.indexOf(name) !== -1) scene.shotImg.src = "assets/shots/" + name;
+  }
+  $$("[data-chips] button").forEach(function (b) {
+    b.addEventListener("click", function () { showShot($(".scene--start"), b.getAttribute("data-design")); });
+  });
+  $$("[data-seg] button").forEach(function (b) {
+    b.addEventListener("click", function () { showShot($(".scene--looks"), b.getAttribute("data-look")); });
+  });
 })();

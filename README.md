@@ -1,13 +1,10 @@
-<!--
-  IMAGE SLOTS. Each commented line below names the exact file to drop into docs/assets/shots/.
-  When the file is there, delete the comment marks around its line so GitHub shows it.
-  Until then the page uses docs/assets/og-card.png as its banner, so nothing shows broken.
--->
+<!-- The pictures below live in docs/assets/shots/ (sizes and names: SLOTS.md there). -->
 
 <p align="center">
-  <img src="docs/assets/og-card.png" alt="Perch: a dock, a live notch and a new Start menu for Windows" width="100%">
-  <!-- SLOT readme-hero.png (2560 x 1280, the full desktop with notch open and dock showing):
-  <img src="docs/assets/shots/readme-hero.png" alt="Perch running on a Windows 11 desktop" width="100%"> -->
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/shots/readme-hero-light.webp">
+    <img src="docs/assets/shots/readme-hero.webp" alt="Perch on a Windows desktop: the notch opened at the top with the weather and quick controls, the dock at the bottom" width="100%">
+  </picture>
 </p>
 
 <h1 align="center">Perch</h1>
@@ -37,8 +34,7 @@ Your apps, files and settings stay exactly where they are. Perch only changes ho
 
 ## The dock
 
-<!-- SLOT dock.png (2560 x 640, the dock with one icon magnified and a window preview open):
-<p align="center"><img src="docs/assets/shots/dock.png" alt="The Perch dock with a window preview" width="100%"></p> -->
+<p align="center"><img src="docs/assets/shots/readme-dock.webp" alt="The Perch dock with Microsoft Edge magnified and previews of its two windows" width="100%"></p>
 
 - Icons grow under your cursor, so the one you are aiming at is always the biggest.
 - Hover an open app to see live previews of its windows.
@@ -48,8 +44,7 @@ Your apps, files and settings stay exactly where they are. Perch only changes ho
 
 ## The notch
 
-<!-- SLOT notch-open.png (2560 x 900, the notch opened with weather, music and widgets):
-<p align="center"><img src="docs/assets/shots/notch-open.png" alt="The Perch notch opened" width="100%"></p> -->
+<p align="center"><img src="docs/assets/shots/readme-notch.webp" alt="The Perch notch opened: two clocks, live PC widgets, the hour-by-hour weather and quick controls" width="100%"></p>
 
 A small black island at the top of the screen. Hover or click it and it opens.
 
@@ -63,8 +58,7 @@ A small black island at the top of the screen. Hover or click it and it opens.
 
 ## The Start menu
 
-<!-- SLOT start-menu.png (1600 x 1200, the Modern Start menu with search open):
-<p align="center"><img src="docs/assets/shots/start-menu.png" alt="The Perch Start menu" width="70%"></p> -->
+<p align="center"><img src="docs/assets/shots/readme-start.webp" alt="The Perch Start menu with 12*7 typed in search and the answer, 84, at the top" width="70%"></p>
 
 - Six designs: Modern, Windows 11, Windows 10 tiles, Down Aero, Windows 11X and Windows 7.
 - Search finds apps, files and Settings pages, and works as a calculator (`12*7` gives 84) and a unit converter.
