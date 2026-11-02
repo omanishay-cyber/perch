@@ -1,4 +1,5 @@
-/* Perch site: plain JS, no framework. Motion uses transform and opacity only, and stops for reduced motion. */
+/* Perch site: plain JS, no framework. Motion uses transform and opacity (plus one clip-path reveal on the
+   notch), and stops for reduced motion. */
 (function () {
   "use strict";
   var doc = document, root = doc.documentElement;
@@ -7,20 +8,23 @@
   var $ = function (s, el) { return (el || doc).querySelector(s); };
   var $$ = function (s, el) { return Array.prototype.slice.call((el || doc).querySelectorAll(s)); };
 
-  /* ---------- theme switch (the first paint is set in <head>) ---------- */
+  /* ---------- theme (the first paint is set in <head>) ---------- */
   var toggle = $("[data-theme-toggle]");
   function syncThemeUi() {
     var dark = root.classList.contains("dark");
     if (toggle) toggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
-    $$('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", dark ? "#080f1f" : "#f2f5f9"); });
-  }
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      var dark = root.classList.toggle("dark");
-      try { localStorage.setItem("perch-theme", dark ? "dark" : "light"); } catch (e) {}
-      syncThemeUi();
+    $$('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", dark ? "#080f1f" : "#eef2f7"); });
+    // the fans carry a light and a dark picture where the app has both
+    $$("img[data-light]").forEach(function (im) {
+      var next = dark ? im.getAttribute("data-dark") : im.getAttribute("data-light");
+      if (im.getAttribute("src") !== next) im.setAttribute("src", next);
     });
   }
+  if (toggle) toggle.addEventListener("click", function () {
+    var dark = root.classList.toggle("dark");
+    try { localStorage.setItem("perch-theme", dark ? "dark" : "light"); } catch (e) {}
+    syncThemeUi();
+  });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
     var saved = null;
     try { saved = localStorage.getItem("perch-theme"); } catch (err) {}
@@ -30,55 +34,71 @@
   });
   syncThemeUi();
 
-  /* ---------- clocks: the visitor's real time ---------- */
-  var fmtLocal = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
-  function fmtZone(tz) {
-    try { return new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", timeZone: tz }); }
-    catch (e) { return null; }
-  }
-  var zoneFmts = {};
-  function tick() {
-    var now = new Date();
-    $$("[data-clock]").forEach(function (el) { el.textContent = fmtLocal.format(now); });
-    $$("[data-clock-tz]").forEach(function (el) {
-      var tz = el.getAttribute("data-clock-tz");
-      if (!(tz in zoneFmts)) zoneFmts[tz] = fmtZone(tz);
-      if (zoneFmts[tz]) el.textContent = zoneFmts[tz].format(now);
-    });
-  }
+  /* ---------- the visitor's real clock in the notch ---------- */
+  var fmt = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
+  function tick() { $$("[data-clock]").forEach(function (el) { el.textContent = fmt.format(new Date()); }); }
   tick();
   setTimeout(function () { tick(); setInterval(tick, 60000); }, (60 - new Date().getSeconds()) * 1000 + 50);
 
-  /* ---------- hero: the notch opens as you scroll ---------- */
-  var hero = $("[data-hero]");
-  var heroQueued = false;
-  function heroFrame() {
-    heroQueued = false;
-    if (!hero || reduce.matches) return;
-    var r = hero.getBoundingClientRect();
-    var span = hero.offsetHeight - innerHeight;
-    var p = span > 0 ? Math.min(1, Math.max(0, -r.top / (span * 0.62))) : 1;
-    hero.style.setProperty("--p", p.toFixed(4));
+  /* ---------- the notch: opens on the hero, closes when you scroll on, opens again on hover ---------- */
+  var wrap = $("[data-island]"), hero = $("[data-hero]"), overHero = true, hoverTimer = 0, hovering = false, startOpen = false;
+  function syncIsland() { if (wrap) wrap.classList.toggle("is-open", (overHero && !startOpen) || hovering); }
+  if (hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (es) {
+      overHero = es[0].intersectionRatio > 0.72;
+      syncIsland();
+    }, { threshold: [0, 0.72, 1] }).observe(hero);
   }
-  function onScroll() { if (!heroQueued) { heroQueued = true; requestAnimationFrame(heroFrame); } }
-  addEventListener("scroll", onScroll, { passive: true });
-  addEventListener("resize", onScroll, { passive: true });
-  reduce.addEventListener("change", function () { if (hero) hero.style.removeProperty("--p"); onScroll(); });
-  heroFrame();
-
-  /* ---------- acts: the pinned stage follows the chapter in view ---------- */
-  var stage = $("[data-stage]");
-  var acts = $$("[data-act]");
-  if (stage && acts.length && "IntersectionObserver" in window) {
-    var actIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) stage.setAttribute("data-scene", en.target.getAttribute("data-act"));
-      });
-    }, { rootMargin: "-45% 0px -45% 0px" });
-    acts.forEach(function (a) { actIo.observe(a); });
+  if (wrap && finePointer.matches) {
+    var isl = $(".island", wrap);
+    isl.addEventListener("pointerenter", function () { clearTimeout(hoverTimer); hoverTimer = setTimeout(function () { hovering = true; syncIsland(); }, 140); });
+    isl.addEventListener("pointerleave", function () { clearTimeout(hoverTimer); hoverTimer = setTimeout(function () { hovering = false; syncIsland(); }, 260); });
   }
+  var menuBtn = $("[data-menu]");
+  if (menuBtn && wrap) {
+    menuBtn.addEventListener("click", function () {
+      var on = wrap.classList.toggle("is-menu");
+      menuBtn.setAttribute("aria-expanded", String(on));
+    });
+    $$(".island-menu a", wrap).forEach(function (a) { a.addEventListener("click", function () { wrap.classList.remove("is-menu"); menuBtn.setAttribute("aria-expanded", "false"); }); });
+  }
+  addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (wrap && wrap.classList.contains("is-menu")) { wrap.classList.remove("is-menu"); menuBtn.setAttribute("aria-expanded", "false"); menuBtn.focus(); }
+  });
 
-  /* ---------- dock: magnification under the cursor (transform only) ---------- */
+  /* ---------- first paint: the page arrives once ---------- */
+  requestAnimationFrame(function () { requestAnimationFrame(function () { if (hero) hero.classList.add("is-in"); }); });
+
+  /* ---------- parallax: slow, transform only ---------- */
+  var heroPlate = $("[data-hero-plate]");
+  var scrollers = $$("[data-parallax]");
+  var mx = 0, my = 0, cx = 0, cy = 0, sy = 0, rafOn = false;
+  function frame() {
+    rafOn = false;
+    if (reduce.matches) return;
+    var vh = innerHeight;
+    sy = scrollY;
+    cx += (mx - cx) * 0.05; cy += (my - cy) * 0.05;
+    if (heroPlate && sy < vh * 1.2) heroPlate.style.transform = "translate3d(" + (cx * -14).toFixed(2) + "px," + ((cy * -8) + sy * 0.14).toFixed(2) + "px,0)";
+    scrollers.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > vh + 80) return;
+      var p = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2);
+      el.style.setProperty("--p", p.toFixed(4));
+    });
+    if (Math.abs(mx - cx) > 0.002 || Math.abs(my - cy) > 0.002) ask();
+  }
+  function ask() { if (!rafOn) { rafOn = true; requestAnimationFrame(frame); } }
+  addEventListener("scroll", ask, { passive: true });
+  addEventListener("resize", ask, { passive: true });
+  if (finePointer.matches) addEventListener("pointermove", function (e) {
+    if (scrollY > innerHeight) return;
+    mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; ask();
+  }, { passive: true });
+  ask();
+
+  /* ---------- dock: magnification with real icons, the app's cosine falloff, transform only ---------- */
   $$("[data-magnify]").forEach(function (dock) {
     var bg = $(".dock-bg", dock);
     var parts = $$(".dock-item, .dock-sep", dock);
@@ -88,144 +108,130 @@
       raf = 0;
       var list = visible();
       if (!list.length) return;
-      var dockRect = dock.getBoundingClientRect();
-      var base = list[0].offsetWidth;
-      var reach = base * 2.7, max = 0.78;
+      var left = dock.getBoundingClientRect().left;
+      var base = list[0].offsetWidth, reach = base * 3, max = 0.9;
       var extras = list.map(function (el) {
         if (px === null || el.classList.contains("dock-sep")) return 0;
-        var c = dockRect.left + el.offsetLeft + el.offsetWidth / 2;
+        var c = left + el.offsetLeft + el.offsetWidth / 2;
         var d = Math.abs(px - c);
         var f = d < reach ? (Math.cos(Math.PI * d / reach) + 1) / 2 : 0;
         return base * max * f;
       });
-      var total = extras.reduce(function (a, b) { return a + b; }, 0);
-      var run = 0;
+      var total = extras.reduce(function (a, b) { return a + b; }, 0), run = 0;
       list.forEach(function (el, i) {
         var shift = run + extras[i] / 2 - total / 2;
         run += extras[i];
-        var s = 1 + extras[i] / base;
-        el.style.transform = "translateX(" + shift.toFixed(2) + "px) scale(" + s.toFixed(4) + ")";
+        el.style.transform = "translateX(" + shift.toFixed(2) + "px) scale(" + (1 + extras[i] / base).toFixed(4) + ")";
       });
       if (bg) bg.style.transform = "scaleX(" + ((dock.offsetWidth + total) / dock.offsetWidth).toFixed(4) + ")";
     }
     function queue() { if (!raf) raf = requestAnimationFrame(apply); }
     dock.addEventListener("pointermove", function (e) {
-      if (reduce.matches) return;
-      if (e.pointerType === "mouse" && !finePointer.matches) return;
+      if (reduce.matches || e.pointerType !== "mouse") return;
       dock.classList.add("is-mag");
       px = e.clientX; queue();
     });
-    dock.addEventListener("pointerleave", function () {
-      dock.classList.remove("is-mag");
-      px = null; queue();
-    });
-    dock.addEventListener("pointerup", function (e) {
-      if (e.pointerType !== "mouse") { dock.classList.remove("is-mag"); px = null; queue(); }
-    });
+    dock.addEventListener("pointerleave", function () { dock.classList.remove("is-mag"); px = null; queue(); });
+    addEventListener("resize", function () { px = null; queue(); }, { passive: true });
   });
 
-  /* ---------- Start menu design chips ---------- */
-  var sm = $(".sm");
-  $$("[data-chips] button").forEach(function (b, _, all) {
-    b.addEventListener("click", function () {
-      all.forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
-      if (sm) sm.setAttribute("data-design", b.getAttribute("data-design"));
-    });
-  });
-  var suggHead = $("[data-sugg-head]");
-  if (suggHead) {
-    var h = new Date().getHours();
-    var part = h < 12 ? "this morning" : h < 18 ? "this afternoon" : "this evening";
-    suggHead.firstChild.nodeValue = "Suggested " + part;
+  /* ---------- the dock's Start button opens the real Start menu ---------- */
+  var startBtn = $("[data-start-btn]"), startPanel = $("[data-start-panel]");
+  function setStart(on, refocus) {
+    if (!startPanel) return;
+    startPanel.classList.toggle("is-open", on);
+    startBtn.setAttribute("aria-expanded", String(on));
+    if (hero) hero.classList.toggle("is-start", on);
+    startOpen = on; syncIsland();
+    if (!on && refocus) startBtn.focus();
+  }
+  if (startBtn && startPanel) {
+    startBtn.addEventListener("click", function (e) { e.stopPropagation(); setStart(!startPanel.classList.contains("is-open")); });
+    doc.addEventListener("click", function (e) { if (!startPanel.contains(e.target)) setStart(false); });
+    addEventListener("keydown", function (e) { if (e.key === "Escape" && startPanel.classList.contains("is-open")) setStart(false, true); });
   }
 
-  /* ---------- notch looks ---------- */
-  var looks = $("[data-looks]");
-  $$("[data-seg] button").forEach(function (b, _, all) {
-    b.addEventListener("click", function () {
-      all.forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
-      if (looks) looks.setAttribute("data-look", b.getAttribute("data-look"));
-    });
-  });
+  /* ---------- scroll reveal, once ---------- */
+  var rv = $$(".rv");
+  if ("IntersectionObserver" in window && !reduce.matches) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  } else rv.forEach(function (el) { el.classList.add("is-in"); });
 
-  /* ---------- living weather: the sky follows the visitor's clock ---------- */
-  var sky = $("[data-sky]");
-  function todOf(hour) { return hour >= 5 && hour < 8 ? "dawn" : hour >= 8 && hour < 17 ? "day" : hour >= 17 && hour < 20 ? "dusk" : "night"; }
-  function tempAt(hour) { return Math.round(14 + 7 * Math.sin(((hour - 9) / 24) * 2 * Math.PI)); }
-  function iconAt(hour, i) {
-    var t = todOf(hour);
-    if (i === 4) return "w-rain";
-    if (t === "night") return i === 2 ? "w-cloud" : "w-moon";
-    if (t === "dawn" || t === "dusk") return "w-part";
-    return i % 3 === 1 ? "w-part" : "w-sun";
-  }
-  function paintSky() {
-    if (!sky) return;
-    var now = new Date(), hour = now.getHours() + now.getMinutes() / 60;
-    var tod = todOf(now.getHours());
-    sky.setAttribute("data-tod", tod);
-    var isDay = hour >= 6 && hour < 18;
-    var arc = isDay ? (hour - 6) / 12 : ((hour + 6) % 24) / 12;
-    var orb = $("[data-orb]", sky);
-    if (orb) orb.style.setProperty("--orb-rot", (-70 + arc * 140).toFixed(1) + "deg");
-    var labels = { dawn: "Clearing at sunrise", day: "Partly cloudy", dusk: "Clear at sunset", night: "Clear tonight" };
-    var temps = [];
-    for (var k = 0; k < 24; k++) temps.push(tempAt(k));
-    var hi = Math.max.apply(null, temps), lo = Math.min.apply(null, temps);
-    $("[data-wx-temp]", sky).textContent = tempAt(now.getHours()) + "°";
-    $("[data-wx-label]", sky).textContent = labels[tod] + " · H " + hi + "° L " + lo + "°";
-    var strip = $("[data-hourly]");
-    if (strip) {
-      var hourFmt = new Intl.DateTimeFormat(undefined, { hour: "numeric" });
-      var html = "";
-      for (var i = 0; i < 8; i++) {
-        var d = new Date(now.getTime() + i * 3600000), hh = d.getHours();
-        html += '<div class="' + (i === 0 ? "now" : "") + '">' + (i === 0 ? "Now" : hourFmt.format(d)) +
-          '<svg aria-hidden="true"><use href="#' + iconAt(hh, i) + '"/></svg><b>' + tempAt(hh) + "°</b></div>";
-      }
-      strip.innerHTML = html;
+  /* ---------- card stacks: hover or click fans them out; one comes to the front; keyboard works ---------- */
+  function setupFan(fan) {
+    var stage = $(".fan-stage", fan);
+    var cards = $$(".fan-card", fan);
+    var names = $$(".fan-names button", fan);
+    var capB = $(".fan-caption b", fan), capS = $(".fan-caption span", fan);
+    var n = cards.length, sel = 0, spread = false;
+
+    function layout() {
+      if (reduce.matches) { fan.classList.add("is-grid"); return; }
+      fan.classList.remove("is-grid");
+      var w = cards[0].offsetWidth, vw = stage.offsetWidth;
+      var open = spread || n <= 3;
+      var room = Math.max(0, (vw - w) / 2);
+      // how far the nearest and the farthest cards sit from the front one
+      var far = Math.max(1, Math.floor((n - 1) / 2));
+      var stepOpen = Math.min(w * 0.3, room / far);
+      var step = open ? stepOpen : Math.min(w * 0.05, 16);
+      var turn = open ? Math.min(3.2, 22 / far) : 1.1;
+      cards.forEach(function (c, i) {
+        // the signed distance round the ring, so the front one always has cards on both sides
+        var d = ((i - sel + n + Math.floor(n / 2)) % n) - Math.floor(n / 2);
+        var a = Math.abs(d);
+        c.style.setProperty("--x", (d * step).toFixed(1) + "px");
+        c.style.setProperty("--y", (a * (open ? w * 0.012 : 2) + (i === sel ? 0 : 6)).toFixed(1) + "px");
+        c.style.setProperty("--r", (d * turn).toFixed(2) + "deg");
+        c.style.setProperty("--s", (1 - a * (open ? 0.018 : 0.012)).toFixed(3));
+        c.style.setProperty("--z", String(100 - a));
+        c.setAttribute("aria-pressed", String(i === sel));
+        c.tabIndex = i === sel ? 0 : -1;
+      });
+      names.forEach(function (b, i) { b.setAttribute("aria-pressed", String(i === sel)); });
+    }
+    function pick(i, focus) {
+      sel = (i + n) % n;
+      if (capB) capB.textContent = cards[sel].getAttribute("data-name");
+      if (capS) capS.textContent = cards[sel].getAttribute("data-hint");
+      layout();
+      if (focus) cards[sel].focus({ preventScroll: true });
+    }
+    cards.forEach(function (c, i) { c.addEventListener("click", function () { spread = true; pick(i); }); });
+    names.forEach(function (b, i) { b.addEventListener("click", function () { spread = true; pick(i); }); });
+    fan.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { spread = true; layout(); } });
+    fan.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") { spread = false; layout(); } });
+    fan.addEventListener("focusin", function () { spread = true; layout(); });
+    fan.addEventListener("focusout", function (e) { if (!fan.contains(e.relatedTarget)) { spread = false; layout(); } });
+    fan.addEventListener("keydown", function (e) {
+      if (!e.target.classList.contains("fan-card")) return;
+      var k = e.key;
+      if (k === "ArrowRight" || k === "ArrowDown") { e.preventDefault(); pick(sel + 1, true); }
+      else if (k === "ArrowLeft" || k === "ArrowUp") { e.preventDefault(); pick(sel - 1, true); }
+      else if (k === "Home") { e.preventDefault(); pick(0, true); }
+      else if (k === "End") { e.preventDefault(); pick(n - 1, true); }
+    });
+    // a swipe on touch
+    var sx = null;
+    stage.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") sx = e.clientX; });
+    stage.addEventListener("pointerup", function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 36) { spread = true; pick(sel + (dx < 0 ? 1 : -1)); }
+    });
+    reduce.addEventListener("change", layout);
+    addEventListener("resize", layout, { passive: true });
+    pick(0);
+    // the picture fan opens by itself once when it comes into view, then closes back
+    if ("IntersectionObserver" in window && !reduce.matches) {
+      var once = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { once.disconnect(); spread = true; layout(); setTimeout(function () { if (!fan.matches(":hover") && !fan.contains(doc.activeElement)) { spread = false; layout(); } }, 1700); }
+      }, { threshold: 0.55 });
+      once.observe(stage);
     }
   }
-  paintSky();
-  setInterval(paintSky, 300000);
-
-  /* ---------- reveal on scroll ---------- */
-  var reveals = $$(".reveal");
-  if ("IntersectionObserver" in window) {
-    var rio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); rio.unobserve(en.target); } });
-    }, { rootMargin: "0px 0px -12% 0px" });
-    reveals.forEach(function (el) { rio.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
-  }
-
-  /* ---------- real screenshots: list a file in assets/shots/shots.json and it replaces the recreation ---------- */
-  if (location.protocol !== "file:") {
-    fetch("assets/shots/shots.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (m) {
-      if (!m || !Array.isArray(m.ready)) return;
-      $$("[data-shot]").forEach(function (scene) {
-        var name = scene.getAttribute("data-shot");
-        if (m.ready.indexOf(name) === -1) return;
-        var img = new Image();
-        img.className = "shot-img"; img.alt = ""; img.decoding = "async"; img.loading = "lazy";
-        img.src = "assets/shots/" + name;
-        scene.appendChild(img);
-        scene.shotImg = img;
-        scene.shotReady = m.ready;
-      });
-    }).catch(function () {});
-  }
-  /* A scene with data-shot-<state> files shows the picture of the state its buttons chose. */
-  function showShot(scene, state) {
-    if (!scene || !scene.shotImg) return;
-    var name = scene.getAttribute("data-shot-" + state);
-    if (name && scene.shotReady.indexOf(name) !== -1) scene.shotImg.src = "assets/shots/" + name;
-  }
-  $$("[data-chips] button").forEach(function (b) {
-    b.addEventListener("click", function () { showShot($(".scene--start"), b.getAttribute("data-design")); });
-  });
-  $$("[data-seg] button").forEach(function (b) {
-    b.addEventListener("click", function () { showShot($(".scene--looks"), b.getAttribute("data-look")); });
-  });
+  $$("[data-fan]").forEach(setupFan);
 })();
