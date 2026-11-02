@@ -1,0 +1,7 @@
+# Local work files: design notes, scripts, screenshots, scratch output
+.design/
+temp/
+node_modules/
+*.log
+Thumbs.db
+desktop.ini

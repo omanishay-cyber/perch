@@ -1,0 +1,56 @@
+name: Feature request
+description: An idea that would make Perch better for you.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: perch-version
+    attributes:
+      label: Perch version
+      description: Open Perch Settings > About.
+      placeholder: "1.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options:
+        - Windows 11
+        - Windows 10 22H2
+    validations:
+      required: true
+  - type: input
+    id: windows-build
+    attributes:
+      label: Windows build
+      description: Press Win + R, type winver, press Enter, and copy the "OS Build" number.
+      placeholder: "26100.4351"
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The task or moment where Perch falls short today.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Perch to do?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How would you use it, step by step? (optional)
+    validations:
+      required: false
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or sketch (optional)
+      description: Drag a file into this box.
+    validations:
+      required: false

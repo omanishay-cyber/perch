@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<g transform="scale(10.24)">
+<defs>
+  <linearGradient id="g4" x1="10" y1="90" x2="90" y2="10" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#4191E1"/><stop offset="0.55" stop-color="#41E1B5"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <linearGradient id="t4" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0E1628"/><stop offset="1" stop-color="#070B16"/>
+  </linearGradient>
+  <linearGradient id="s4" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.13"/><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="r4" cx="50" cy="96" r="60" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#41E1B5" stop-opacity="0.22"/><stop offset="1" stop-color="#41E1B5" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect x="4" y="4" width="92" height="92" rx="22" fill="url(#t4)"/>
+<rect x="4" y="4" width="92" height="92" rx="22" fill="url(#r4)"/>
+<rect x="4" y="4" width="92" height="92" rx="22" fill="url(#s4)"/>
+<rect x="4.4" y="4.4" width="91.2" height="91.2" rx="21.6" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="0.8"/>
+<g fill="url(#g4)">
+  <path d="M24 63 L58 63 A18 18 0 1 0 41.3 51.6 Z"/>
+  <path d="M71 33 L89 40 L72 47 Z"/>
+  <rect x="14" y="71" width="62" height="11" rx="5.5"/>
+</g>
+<circle cx="63" cy="40" r="3.6" fill="#070B16"/>
+</g>
+</svg>

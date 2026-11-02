@@ -1,0 +1,81 @@
+name: Bug report
+description: Something in Perch does not work the way it should.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. The more exact you are, the faster it gets fixed.
+        To find your Windows version and build: press Win + R, type `winver`, press Enter.
+  - type: input
+    id: perch-version
+    attributes:
+      label: Perch version
+      description: Open Perch Settings > About.
+      placeholder: "1.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version
+      options:
+        - Windows 11
+        - Windows 10 22H2
+        - Something else (say which below)
+    validations:
+      required: true
+  - type: input
+    id: windows-build
+    attributes:
+      label: Windows build
+      description: The "OS Build" number that winver shows.
+      placeholder: "26100.4351"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of Perch?
+      options:
+        - Dock
+        - Notch
+        - Start menu
+        - Volume or brightness pop-up
+        - Settings
+        - Install or update
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you saw, and what you expected to see instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Open the notch
+        2. Click the weather
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or screen recording
+      description: Drag the file into this box. Hide anything private first.
+    validations:
+      required: false
+  - type: textarea
+    id: setup
+    attributes:
+      label: Your setup (optional)
+      description: Number of monitors, screen size and scaling (for example 4K at 150%), touch screen, other desktop tools you run.
+    validations:
+      required: false

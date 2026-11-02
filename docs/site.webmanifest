@@ -1,0 +1,15 @@
+{
+  "name": "Perch",
+  "short_name": "Perch",
+  "description": "A smarter dock, notch and Start menu for Windows.",
+  "start_url": "/perch/",
+  "scope": "/perch/",
+  "display": "browser",
+  "background_color": "#080f1f",
+  "theme_color": "#080f1f",
+  "icons": [
+    { "src": "/perch/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/perch/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/perch/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

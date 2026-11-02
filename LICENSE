@@ -1,0 +1,33 @@
+Perch License
+
+Copyright (c) 2026 Anish Trivedi. All rights reserved.
+
+"Perch" means the Perch software, its installers, updates, files and documentation, in any form.
+
+1. Use. You may download, install and use Perch, free of charge, on any computer you own or are allowed to
+   manage, for personal use and for business use.
+
+2. What you may not do. You may not, in whole or in part:
+   a. copy Perch, except for the copies made by installing and using it;
+   b. modify, translate or adapt Perch, or make works based on it;
+   c. reverse engineer, decompile, disassemble or otherwise try to obtain its source code, except where the law
+      allows this in spite of this licence;
+   d. redistribute, share, sublicense, rent or lend Perch, or host it for others to download;
+   e. sell or resell Perch, or charge any fee for it or for access to it;
+   f. republish Perch, or release it under another name, brand or licence.
+   To give Perch to someone, send them to https://github.com/omanishay-cyber/perch.
+
+3. Ownership. Perch is licensed, not sold. Anish Trivedi keeps all rights, title and interest in Perch, including
+   its name and logo. Every right not granted in this licence is reserved.
+
+4. Usage counting. Perch counts installs and daily use anonymously, by fetching small files from its GitHub
+   releases; no personal data is collected or sent.
+
+5. No warranty. Perch is provided "as is", without warranty of any kind, express or implied, including the
+   warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+6. No liability. To the fullest extent the law allows, Anish Trivedi is not liable for any claim, damage, loss of
+   data or other liability arising from the use of Perch or from being unable to use it.
+
+7. Ending. This licence ends at once if you break any of its terms. When it ends, you must stop using Perch and
+   delete every copy you have.

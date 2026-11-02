@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perch: a smarter dock, notch and Start menu for Windows</title>
+<meta name="description" content="Perch swaps the Windows taskbar for a magnifying dock, adds a live notch with weather, music and widgets, and its own Start menu. Free for Windows 11 and 10.">
+<link rel="canonical" href="https://omanishay-cyber.github.io/perch/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Anish Trivedi">
+<meta name="theme-color" content="#f2f5f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f1f" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Perch">
+<meta property="og:title" content="Perch: a smarter dock, notch and Start menu for Windows">
+<meta property="og:description" content="A magnifying dock in place of the taskbar, a live notch with weather, music and widgets, and a Start menu of its own. Free for Windows 11 and Windows 10 22H2.">
+<meta property="og:url" content="https://omanishay-cyber.github.io/perch/">
+<meta property="og:image" content="https://omanishay-cyber.github.io/perch/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Perch: the Windows taskbar, reconsidered. A notch at the top of the screen and a dock at the bottom.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Perch: a smarter dock, notch and Start menu for Windows">
+<meta name="twitter:description" content="A magnifying dock in place of the taskbar, a live notch with weather, music and widgets, and a Start menu of its own. Free for Windows 11 and 10.">
+<meta name="twitter:image" content="https://omanishay-cyber.github.io/perch/assets/og-card.png">
+<meta name="twitter:image:alt" content="Perch: the Windows taskbar, reconsidered.">
+
+<link rel="icon" href="/perch/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/perch/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/perch/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/perch/apple-touch-icon.png">
+<link rel="manifest" href="/perch/site.webmanifest">
+
+<link rel="preload" href="assets/fonts/arno-light-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/verlag-book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  // Theme before first paint: saved choice, else the system setting.
+  (function () {
+    var d = document.documentElement, s = null;
+    try { s = localStorage.getItem("perch-theme"); } catch (e) {}
+    if (s === "dark" || (s !== "light" && matchMedia("(prefers-color-scheme: dark)").matches)) d.classList.add("dark");
+    d.classList.add("js");
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://omanishay-cyber.github.io/perch/#software",
+  "name": "Perch",
+  "description": "A custom Windows shell: a magnifying dock in place of the taskbar, a live notch with weather, music and system widgets, and its own Start menu.",
+  "url": "https://omanishay-cyber.github.io/perch/",
+  "image": "https://omanishay-cyber.github.io/perch/assets/og-card.png",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 11, Windows 10",
+  "softwareVersion": "1.1",
+  "downloadUrl": "https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe",
+  "releaseNotes": "https://github.com/omanishay-cyber/perch/releases/latest",
+  "license": "https://github.com/omanishay-cyber/perch/blob/main/LICENSE",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": { "@id": "https://omanishay-cyber.github.io/perch/#organization" },
+  "publisher": { "@id": "https://omanishay-cyber.github.io/perch/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://omanishay-cyber.github.io/perch/#organization",
+  "name": "Anish Trivedi",
+  "url": "https://omanishay-cyber.github.io/perch/",
+  "logo": "https://omanishay-cyber.github.io/perch/favicon-192.png",
+  "sameAs": ["https://github.com/omanishay-cyber"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Perch free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Perch costs nothing, at home or at work. The licence lets you use it on any PC you own or manage; it does not let you copy, change, share or sell it." } },
+    { "@type": "Question", "name": "Which versions of Windows does Perch run on?", "acceptedAnswer": { "@type": "Answer", "text": "Windows 11 and Windows 10 version 22H2. Older versions of Windows 10 are not supported. To check yours, press Win + R, type winver and press Enter." } },
+    { "@type": "Question", "name": "What happens over full-screen games and videos?", "acceptedAnswer": { "@type": "Answer", "text": "The dock stays hidden over full-screen apps and shows up only when you press the Start key, the same rule the Windows taskbar follows." } },
+    { "@type": "Question", "name": "How do updates work?", "acceptedAnswer": { "@type": "Answer", "text": "Each release on GitHub carries a small file called latest.json. Perch reads it to learn whether a newer version exists and offers you the update. Every installer is signed, and Perch refuses an update whose signature does not match." } },
+    { "@type": "Question", "name": "Does Perch collect my data?", "acceptedAnswer": { "@type": "Answer", "text": "No personal data. Perch counts installs and daily use anonymously by fetching tiny files from its GitHub releases. GitHub counts the downloads; nothing else is sent." } },
+    { "@type": "Question", "name": "Does Perch work with touch screens and high-DPI displays?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Perch works on every screen size and scaling level, and on touch screens." } },
+    { "@type": "Question", "name": "How do I remove Perch?", "acceptedAnswer": { "@type": "Answer", "text": "Open Settings, then Apps, then Installed apps. Find Perch and choose Uninstall." } },
+    { "@type": "Question", "name": "Is the source code available?", "acceptedAnswer": { "@type": "Answer", "text": "No. The source code is private. The public GitHub repository holds the installers, release notes, the update file and the licence." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="brand" x1="10" y1="90" x2="90" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color: var(--brand-1)"/><stop offset="0.55" style="stop-color: var(--brand-2)"/><stop offset="1" style="stop-color: var(--brand-3)"/>
+    </linearGradient>
+    <symbol id="i-mark" viewBox="0 0 100 100"><g fill="url(#brand)"><path d="M24 63 L58 63 A18 18 0 1 0 41.3 51.6 Z"/><path d="M71 33 L89 40 L72 47 Z"/><rect x="14" y="71" width="62" height="11" rx="5.5"/></g><circle cx="63" cy="40" r="3.6" fill="currentColor" opacity=".9"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h4l2 2.2h7A2.5 2.5 0 0 1 21 8.7v8.8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5S9.4 5.9 12 3.5z"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 7 7.5 6 7.5-6"/></g></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path fill="currentColor" d="M9 17.5a2.5 2.5 0 1 1-2.5-2.5c.9 0 1.7.4 2.1 1V6.2l10-2.2v11.5a2.5 2.5 0 1 1-2.5-2.5c.9 0 1.7.4 2.1 1V7.1l-7.6 1.7v8.7z"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="m4 17 5-5 4 4 2.5-2.5L20 18"/><circle cx="15.5" cy="9" r="1.6" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-term" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="m7.5 9.5 3 2.5-3 2.5M12.5 15h4"/></g></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></g></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></g></symbol>
+    <symbol id="i-drive" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="7" width="17" height="10" rx="2.5"/><circle cx="16.5" cy="12" r="1.2" fill="currentColor"/></g></symbol>
+    <symbol id="i-bin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7l1 12.5h9l1-12.5"/></g></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></g></symbol>
+    <symbol id="i-power" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3.5v8M7 6.5a7 7 0 1 0 10 0"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path fill="currentColor" d="M6 5h2v14H6zM19 5.5v13L9.5 12z"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path fill="currentColor" d="M16 5h2v14h-2zM5 5.5v13l9.5-6.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></symbol>
+    <symbol id="w-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" style="fill: var(--sun)"/><g style="stroke: var(--sun)" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="w-part" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4.2" style="fill: var(--sun)"/><path style="fill: var(--cloud)" d="M8 19.5h9.5a3.6 3.6 0 0 0 .4-7.2 5 5 0 0 0-9.4-1A4.1 4.1 0 0 0 8 19.5z"/></symbol>
+    <symbol id="w-cloud" viewBox="0 0 24 24"><path style="fill: var(--cloud)" d="M7 18.5h10.5a4 4 0 0 0 .5-8 5.6 5.6 0 0 0-10.6-1.2A4.6 4.6 0 0 0 7 18.5z"/></symbol>
+    <symbol id="w-rain" viewBox="0 0 24 24"><path style="fill: var(--cloud)" d="M7 14.5h10.5a4 4 0 0 0 .5-8 5.6 5.6 0 0 0-10.6-1.2A4.6 4.6 0 0 0 7 14.5z"/><g style="stroke: var(--rain)" stroke-width="1.8" stroke-linecap="round"><path d="M8 17.5 7 20M12.5 17.5l-1 2.5M17 17.5l-1 2.5"/></g></symbol>
+    <symbol id="w-moon" viewBox="0 0 24 24"><path style="fill: var(--moon)" d="M18.5 14.5A7.5 7.5 0 0 1 9.5 5.5a7.5 7.5 0 1 0 9 9z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.7.6-3.2-1.2-3.2-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.4-1.1-4.4-4.7 0-1 .4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.8 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.6 1 2.6 0 3.7-2.3 4.5-4.4 4.7.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></symbol>
+  </defs>
+</svg>
+
+<!-- The site's navigation is a Perch notch: real clock, theme switch, download. -->
+<header class="notch-nav" aria-label="Site">
+  <a class="notch-brand" href="#top" aria-label="Perch, back to top"><svg aria-hidden="true"><use href="#i-mark"/></svg><span>Perch</span></a>
+  <span class="notch-clock tnum" data-clock aria-hidden="true">9:41</span>
+  <nav class="notch-links" aria-label="Sections">
+    <a href="#notch">Notch</a><a href="#dock">Dock</a><a href="#start">Start</a><a href="#faq">FAQ</a>
+  </nav>
+  <button class="notch-icon-btn" type="button" data-theme-toggle aria-label="Switch to dark theme">
+    <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+  </button>
+  <a class="notch-cta" href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe">Download</a>
+  <span class="river" aria-hidden="true"><i></i></span>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- HERO: the desktop. The notch opens as you scroll; the dock magnifies under the cursor. -->
+<section class="hero" id="top" aria-labelledby="hero-title" data-hero>
+  <div class="hero-pin">
+    <div class="wallpaper" aria-hidden="true">
+      <svg class="stars" viewBox="0 0 1000 400" preserveAspectRatio="none"><g>
+        <circle cx="60" cy="40" r="1.2"/><circle cx="180" cy="120" r=".9"/><circle cx="260" cy="30" r="1.4"/><circle cx="340" cy="160" r=".8"/><circle cx="420" cy="70" r="1"/><circle cx="560" cy="40" r=".9"/><circle cx="640" cy="140" r="1.3"/><circle cx="720" cy="60" r=".8"/><circle cx="800" cy="110" r="1.1"/><circle cx="880" cy="30" r="1.4"/><circle cx="950" cy="170" r=".9"/><circle cx="120" cy="220" r=".8"/><circle cx="480" cy="230" r=".9"/><circle cx="905" cy="250" r=".8"/>
+      </g></svg>
+      <span class="horizon"><i></i></span>
+      <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 170 C 160 120 300 150 440 128 S 760 70 900 110 S 1120 150 1200 120 L1200 300 L0 300 Z"/><path d="M0 220 C 200 190 360 214 560 196 S 920 160 1200 200 L1200 300 L0 300 Z"/></svg>
+    </div>
+
+    <!-- The opened island. SLOT for a real capture: assets/shots/notch-open.webp -->
+    <div class="island-hero" aria-hidden="true">
+      <div class="ih-body">
+        <div class="ih-grid">
+          <div class="ih-card">
+            <div class="ih-time"><b class="tnum" data-clock>9:41</b><span>Tokyo <span class="tnum" data-clock-tz="Asia/Tokyo">22:41</span></span></div>
+            <div class="music">
+              <div class="art"></div>
+              <div><b>Midnight Window</b><span>Lumen Fields</span></div>
+              <div class="progress"><i></i></div>
+              <div class="controls"><svg><use href="#i-prev"/></svg><svg><use href="#i-pause"/></svg><svg><use href="#i-next"/></svg><span class="viz"><i></i><i></i><i></i><i></i><i></i></span></div>
+            </div>
+          </div>
+          <div class="ih-card">
+            <span class="ih-label">Weather</span>
+            <div class="wx-now"><svg><use href="#w-part"/></svg><div><b class="tnum">18°</b><span>Partly cloudy</span></div></div>
+            <div class="hourly tnum"><div>Now<svg><use href="#w-part"/></svg><b>18°</b></div><div>11<svg><use href="#w-sun"/></svg><b>20°</b></div><div>12<svg><use href="#w-sun"/></svg><b>21°</b></div><div>13<svg><use href="#w-cloud"/></svg><b>20°</b></div><div>14<svg><use href="#w-rain"/></svg><b>17°</b></div></div>
+          </div>
+          <div class="ih-card">
+            <span class="ih-label">This PC</span>
+            <div class="meters tnum" style="margin-top:10px">
+              <div class="meter">CPU<span class="bar"><i style="transform:scaleX(.23)"></i></span><b>23%</b></div>
+              <div class="meter">RAM<span class="bar"><i style="transform:scaleX(.41)"></i></span><b>41%</b></div>
+              <div class="meter">GPU<span class="bar"><i style="transform:scaleX(.12)"></i></span><b>12%</b></div>
+              <div class="meter">Disk<span class="bar"><i style="transform:scaleX(.64)"></i></span><b>64%</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <div class="wrap">
+        <h1 id="hero-title"><span class="line"><span>The Windows taskbar,</span></span><span class="line"><span><em>reconsidered.</em></span></span></h1>
+        <div class="hero-side">
+          <p>Perch swaps the taskbar for a dock that magnifies under your cursor, puts a live notch at the top of your screen, and brings a Start menu you can style six ways.</p>
+          <div class="hero-actions">
+            <a class="btn btn--grad" href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><svg aria-hidden="true"><use href="#i-down"/></svg>Download for Windows</a>
+            <a class="btn btn--ghost" href="#notch">See how it works</a>
+          </div>
+          <p class="hero-meta">Version 1.1 · Free · Windows&nbsp;11 and Windows&nbsp;10&nbsp;22H2</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dock-wrap">
+      <div class="dock" data-magnify role="group" aria-label="Example Perch dock. Move your cursor across it.">
+        <span class="dock-bg" aria-hidden="true"></span>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-blue"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><span class="tip">Files</span><span class="dot"></span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-teal"><svg aria-hidden="true"><use href="#i-globe"/></svg></span><span class="tip">Browser</span><span class="dot"></span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-sky t-blue"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><span class="tip">Mail</span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-rose"><svg aria-hidden="true"><use href="#i-music"/></svg></span><span class="tip">Music</span><span class="dot"></span></button>
+        <button class="dock-item hide-sm" type="button" tabindex="-1"><span class="tile t-amber"><svg aria-hidden="true"><use href="#i-photo"/></svg></span><span class="tip">Photos</span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-violet"><svg aria-hidden="true"><use href="#i-code"/></svg></span><span class="tip">Code</span><span class="dot"></span></button>
+        <button class="dock-item hide-sm" type="button" tabindex="-1"><span class="tile t-slate"><svg aria-hidden="true"><use href="#i-term"/></svg></span><span class="tip">Terminal</span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-green"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><span class="tip">Calendar</span></button>
+        <span class="dock-sep" aria-hidden="true"></span>
+        <button class="dock-item hide-sm" type="button" tabindex="-1"><span class="tile t-glass"><svg aria-hidden="true"><use href="#i-down"/></svg></span><span class="tip">Downloads</span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-glass"><svg aria-hidden="true"><use href="#i-drive"/></svg></span><span class="tip">Local Disk (C:)</span></button>
+        <button class="dock-item" type="button" tabindex="-1"><span class="tile t-glass"><svg aria-hidden="true"><use href="#i-bin"/></svg></span><span class="tip">Recycle Bin</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTS: one pinned desktop stage, five chapters. -->
+<section class="acts" aria-label="What Perch does">
+  <div class="wrap acts-grid">
+    <div class="acts-text">
+      <article class="act" id="notch" data-act="notch">
+        <span class="act-num">01, The notch</span>
+        <h2>A notch that <em>knows things.</em></h2>
+        <p>The empty strip at the top of your screen finally earns its place. Hover it and it opens: the time, the weather, your music and how hard your PC is working.</p>
+        <ul>
+          <li><b>Time.</b> Clock, a second time zone, calendar, timers and a stopwatch.</li>
+          <li><b>Music.</b> Album art, controls and a visualizer that moves with the song.</li>
+          <li><b>Your PC.</b> Live CPU, RAM, GPU, disk, network, volume and battery.</li>
+          <li><b>Quick controls.</b> Wi-Fi, Bluetooth, sound, notifications, clipboard history, a quick note and the power menu.</li>
+        </ul>
+      </article>
+      <article class="act" id="dock" data-act="dock">
+        <span class="act-num">02, The dock</span>
+        <h2>Aim, and it <em>meets you.</em></h2>
+        <p>Icons grow under your cursor, so the one you are reaching for is always the largest. Hover an open app to see its windows before you switch.</p>
+        <ul>
+          <li><b>Pins.</b> Apps, folders and drives, with the Recycle Bin at the end.</li>
+          <li><b>Previews.</b> Live window previews; close a window right from its preview.</li>
+          <li><b>Full screen.</b> Hidden over full-screen apps until you press Start, the same rule the taskbar follows.</li>
+        </ul>
+      </article>
+      <article class="act" id="start" data-act="start">
+        <span class="act-num">03, The Start menu</span>
+        <h2>Your Start menu, <em>six ways.</em></h2>
+        <p>Modern, Windows 11, Windows 10 tiles, Down Aero, Windows 11X or Windows 7. Search is as quick as the one in Windows, and it does sums too.</p>
+        <ul>
+          <li><b>Search.</b> Apps, files, Settings pages, a calculator and unit conversions.</li>
+          <li><b>Pins.</b> Jump lists, pinned folders and a strip of widgets.</li>
+          <li><b>Suggestions.</b> What you open in the morning differs from the evening, and so do they.</li>
+          <li><b>Keyboard.</b> Every part works without a mouse.</li>
+        </ul>
+      </article>
+      <article class="act" id="weather" data-act="weather">
+        <span class="act-num">04, Weather</span>
+        <h2>Weather that <em>looks outside.</em></h2>
+        <p>The sky right now sits in the notch. Open it for the hour-by-hour forecast. The sky on this page follows your own clock: come back tonight and it will be dark.</p>
+      </article>
+      <article class="act" id="looks" data-act="looks">
+        <span class="act-num">05, The looks</span>
+        <h2>Twelve notches. <em>Three looks.</em></h2>
+        <p>Pick one of twelve notch designs, then a look: Simple or Graphics. Light and dark follow your Windows setting, on every screen size and scaling level, touch screens included.</p>
+      </article>
+    </div>
+
+    <div class="stage-col">
+      <div class="stage" data-stage data-scene="notch">
+        <div class="wallpaper" aria-hidden="true"><span class="horizon"><i></i></span><svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 170 C 160 120 300 150 440 128 S 760 70 900 110 S 1120 150 1200 120 L1200 300 L0 300 Z"/><path d="M0 220 C 200 190 360 214 560 196 S 920 160 1200 200 L1200 300 L0 300 Z"/></svg></div>
+
+        <!-- Scene: notch. SLOT assets/shots/notch-open.webp -->
+        <div class="scene scene--notch" aria-hidden="true" data-shot="notch-open.webp">
+          <div class="island-stage">
+            <div class="ih-grid">
+              <div class="ih-card">
+                <div class="ih-time"><b class="tnum" data-clock>9:41</b><span>London <span class="tnum" data-clock-tz="Europe/London">14:41</span></span></div>
+                <div class="music">
+                  <div class="art"></div>
+                  <div><b>Midnight Window</b><span>Lumen Fields</span></div>
+                  <div class="progress"><i></i></div>
+                  <div class="controls"><svg><use href="#i-prev"/></svg><svg><use href="#i-pause"/></svg><svg><use href="#i-next"/></svg><span class="viz"><i></i><i></i><i></i><i></i><i></i></span></div>
+                </div>
+              </div>
+              <div class="ih-card">
+                <span class="ih-label">Weather</span>
+                <div class="wx-now"><svg><use href="#w-part"/></svg><div><b class="tnum">18°</b><span>Partly cloudy</span></div></div>
+                <div class="hourly tnum"><div>Now<svg><use href="#w-part"/></svg><b>18°</b></div><div>11<svg><use href="#w-sun"/></svg><b>20°</b></div><div>12<svg><use href="#w-sun"/></svg><b>21°</b></div><div>13<svg><use href="#w-cloud"/></svg><b>20°</b></div><div>14<svg><use href="#w-rain"/></svg><b>17°</b></div></div>
+              </div>
+              <div class="ih-card meters-card">
+                <div class="meters tnum">
+                  <div class="meter">CPU<b>23%</b><span class="bar"><i style="transform:scaleX(.23)"></i></span></div>
+                  <div class="meter">RAM<b>41%</b><span class="bar"><i style="transform:scaleX(.41)"></i></span></div>
+                  <div class="meter">GPU<b>12%</b><span class="bar"><i style="transform:scaleX(.12)"></i></span></div>
+                  <div class="meter">Network<b>4.2 MB/s</b><span class="bar"><i style="transform:scaleX(.35)"></i></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="stage-caption">Hover the notch and it opens</span>
+        </div>
+
+        <!-- Scene: dock. SLOT assets/shots/dock-preview.webp -->
+        <div class="scene scene--dock" aria-hidden="true" data-shot="dock-preview.webp">
+          <div class="preview">
+            <figure><div class="mini-win"><div class="bar"></div><div class="body"><i></i><i></i><i></i><i></i></div></div><figcaption>Release notes</figcaption></figure>
+            <figure><div class="mini-win"><div class="bar"></div><div class="body"><i></i><i></i><i></i></div></div><figcaption>Weather map</figcaption></figure>
+          </div>
+          <div class="desk-win"><div class="tb">Release notes<span><i></i><i></i><i></i></span></div><div class="pane"><div class="side"><i></i><i></i><i></i><i></i></div><div class="main"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+          <div class="dock">
+            <span class="dock-bg"></span>
+            <span class="dock-item"><span class="tile t-blue"><svg><use href="#i-folder"/></svg></span></span>
+            <span class="dock-item near"><span class="tile t-rose"><svg><use href="#i-music"/></svg></span><span class="dot"></span></span>
+            <span class="dock-item big"><span class="tile t-teal"><svg><use href="#i-globe"/></svg></span><span class="dot"></span></span>
+            <span class="dock-item near"><span class="tile t-violet"><svg><use href="#i-code"/></svg></span><span class="dot"></span></span>
+            <span class="dock-item"><span class="tile t-green"><svg><use href="#i-cal"/></svg></span></span>
+            <span class="dock-sep"></span>
+            <span class="dock-item"><span class="tile t-glass"><svg><use href="#i-drive"/></svg></span></span>
+            <span class="dock-item"><span class="tile t-glass"><svg><use href="#i-bin"/></svg></span></span>
+          </div>
+        </div>
+
+        <!-- Scene: Start menu. SLOT assets/shots/start-menu.webp -->
+        <div class="scene scene--start" aria-hidden="true" data-shot="start-menu.webp">
+          <div class="sm" data-design="modern">
+            <div class="sm-search"><svg><use href="#i-search"/></svg><span>12*7</span><span class="caret"></span></div>
+            <div class="sm-answer"><div><span>Calculator</span><br><b class="tnum">= 84</b></div><span>Enter to copy</span></div>
+            <div class="sm-head">Pinned<span>All apps</span></div>
+            <div class="sm-pins">
+              <div class="sm-pin"><span class="tile t-blue"><svg><use href="#i-folder"/></svg></span>Files</div>
+              <div class="sm-pin"><span class="tile t-teal"><svg><use href="#i-globe"/></svg></span>Browser</div>
+              <div class="sm-pin"><span class="tile t-rose"><svg><use href="#i-music"/></svg></span>Music</div>
+              <div class="sm-pin"><span class="tile t-amber"><svg><use href="#i-photo"/></svg></span>Photos</div>
+              <div class="sm-pin"><span class="tile t-violet"><svg><use href="#i-code"/></svg></span>Code</div>
+              <div class="sm-pin"><span class="tile t-green"><svg><use href="#i-cal"/></svg></span>Calendar</div>
+              <div class="sm-pin"><span class="tile t-slate"><svg><use href="#i-term"/></svg></span>Terminal</div>
+              <div class="sm-pin"><span class="tile t-blue"><svg><use href="#i-mail"/></svg></span>Mail</div>
+              <div class="sm-pin"><span class="tile t-slate"><svg><use href="#i-gear"/></svg></span>Settings</div>
+              <div class="sm-pin"><span class="tile t-teal"><svg><use href="#i-drive"/></svg></span>This PC</div>
+              <div class="sm-pin"><span class="tile t-amber"><svg><use href="#i-down"/></svg></span>Downloads</div>
+              <div class="sm-pin"><span class="tile t-violet"><svg><use href="#i-folder"/></svg></span>Projects</div>
+            </div>
+            <div class="sm-head" data-sugg-head>Suggested this evening<span></span></div>
+            <div class="sm-sugg">
+              <div class="sm-row"><span class="tile t-rose"><svg><use href="#i-music"/></svg></span><b>Music</b><span>Usually after 6 pm</span></div>
+              <div class="sm-row"><span class="tile t-blue"><svg><use href="#i-folder"/></svg></span><b>Holiday photos</b><span>Folder</span></div>
+              <div class="sm-row"><span class="tile t-green"><svg><use href="#i-cal"/></svg></span><b>Calendar</b><span>2 events tomorrow</span></div>
+            </div>
+            <div class="sm-foot"><span class="sm-user"><i></i>Anish</span><svg><use href="#i-power"/></svg></div>
+          </div>
+        </div>
+
+        <!-- Scene: weather. SLOT assets/shots/weather-hourly.webp -->
+        <div class="scene scene--weather" aria-hidden="true" data-shot="weather-hourly.webp">
+          <div class="wx-island">
+            <div class="sky" data-sky data-tod="night">
+              <svg class="tstars" viewBox="0 0 600 210" preserveAspectRatio="none"><circle cx="40" cy="30" r="1.2"/><circle cx="120" cy="80" r=".9"/><circle cx="200" cy="22" r="1.3"/><circle cx="300" cy="60" r=".8"/><circle cx="380" cy="28" r="1.1"/><circle cx="460" cy="90" r=".9"/><circle cx="540" cy="40" r="1.2"/><circle cx="250" cy="110" r=".8"/></svg>
+              <div class="orb" data-orb><i></i></div>
+              <span class="cloud c1"></span><span class="cloud c2"></span>
+              <div class="wx-big"><b class="tnum" data-wx-temp>14°</b><span data-wx-label>Clear tonight · H 21° L 11°</span></div>
+            </div>
+            <div class="hourly-lg tnum" data-hourly></div>
+          </div>
+          <span class="stage-caption">The sky here follows your local time</span>
+        </div>
+
+        <!-- Scene: looks. SLOT assets/shots/notch-designs.webp -->
+        <div class="scene scene--looks" aria-hidden="true" data-shot="notch-designs.webp">
+          <div class="looks-grid looks" data-looks data-look="simple">
+            <div class="look l-classic"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Perch Classic</div>
+            <div class="look l-island"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Island</div>
+            <div class="look l-cutout"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Camera Cutout</div>
+            <div class="look l-pebble"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Frost Pebble</div>
+            <div class="look l-hairline"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Hairline</div>
+            <div class="look l-liquid"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Liquid</div>
+            <div class="look l-neon"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Neon Edge</div>
+            <div class="look l-clay"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Clay</div>
+            <div class="look l-hud"><span class="pill"><span>09:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Terminal HUD</div>
+            <div class="look l-ribbon"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Status Ribbon</div>
+            <div class="look l-twin"><span class="pill"><span>9:41</span></span>Twin Islands</div>
+            <div class="look l-fluent"><span class="pill"><span>9:41</span><span class="viz"><i></i><i></i><i></i><i></i></span><span>18°</span></span>Fluent</div>
+          </div>
+        </div>
+        <div class="design-chips" role="group" aria-label="Start menu design" data-chips>
+          <button type="button" data-design="modern" aria-pressed="true">Modern</button>
+          <button type="button" data-design="win10" aria-pressed="false">Windows 10 tiles</button>
+          <button type="button" data-design="win7" aria-pressed="false">Windows 7</button>
+        </div>
+        <div class="seg" role="group" aria-label="Notch look" data-seg>
+          <button type="button" data-look="simple" aria-pressed="true">Simple</button>
+          <button type="button" data-look="graphics" aria-pressed="false">Graphics</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEDGER: why it beats the taskbar -->
+<section class="section" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 id="why-title">Why it beats <em>the taskbar.</em></h2>
+      <p class="lede">The taskbar has looked after Windows for thirty years. Here is what changes when Perch takes over.</p>
+    </div>
+    <table class="ledger reveal">
+      <caption class="sr-only">The Windows taskbar compared with Perch</caption>
+      <thead><tr><th scope="col">What you do</th><th scope="col">Windows taskbar</th><th scope="col">Perch</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Reach for an app</th><td data-label="Windows taskbar">Every icon stays the same size.</td><td data-label="Perch">The icon under your cursor grows to meet it.</td></tr>
+        <tr><th scope="row">Glance at the top of the screen</th><td data-label="Windows taskbar">Nothing there.</td><td data-label="Perch">A notch with the time, weather, music and your PC's vitals.</td></tr>
+        <tr><th scope="row">Switch windows</th><td data-label="Windows taskbar">Thumbnails on hover.</td><td data-label="Perch">Live previews, and you can close a window from its preview.</td></tr>
+        <tr><th scope="row">Open Start</th><td data-label="Windows taskbar">One design.</td><td data-label="Perch">Six designs. You choose.</td></tr>
+        <tr><th scope="row">Search</th><td data-label="Windows taskbar">Apps, files, settings and web results.</td><td data-label="Perch">Apps, files, Settings pages, sums and unit conversions.</td></tr>
+        <tr><th scope="row">Pin things</th><td data-label="Windows taskbar">Apps.</td><td data-label="Perch">Apps, folders and drives, plus the Recycle Bin.</td></tr>
+        <tr><th scope="row">Control music</th><td data-label="Windows taskbar">A flyout in the corner.</td><td data-label="Perch">Album art, controls and a visualizer, one hover away.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FEATURE INDEX -->
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 id="features-title">Everything <em>in 1.1.</em></h2>
+      <p class="lede">The full list, so you know what you are getting before you install.</p>
+    </div>
+    <div class="index reveal">
+      <div><h3>Dock</h3><ul><li><b>Magnification</b> under the cursor</li><li><b>Window previews</b> with close buttons</li><li><b>Pins</b> for apps, folders and drives</li><li><b>Recycle Bin</b> at the end</li><li><b>Full screen</b> shows only when Start is pressed</li></ul></div>
+      <div><h3>Notch</h3><ul><li><b>Clock</b> and a second time zone</li><li><b>Weather</b> with an hourly forecast</li><li><b>Live widgets</b>: CPU, RAM, GPU, disk, network, volume, battery</li><li><b>Music</b> with album art and visualizer</li><li><b>Wi-Fi, Bluetooth, sound</b> and notifications</li><li><b>Clipboard history</b> and a quick note</li><li><b>Calendar, timers</b> and the power menu</li><li><b>12 designs</b>; Simple and Graphics looks</li></ul></div>
+      <div><h3>Start menu</h3><ul><li><b>Six designs</b>: Modern, Windows 11, Windows 10 tiles, Down Aero, Windows 11X, Windows 7</li><li><b>Search</b> with calculator and Settings pages</li><li><b>Jump lists</b> and pinned folders</li><li><b>Suggestions</b> by time of day</li><li><b>Widgets strip</b></li><li><b>Full keyboard</b> control</li></ul></div>
+      <div><h3>Around Windows</h3><ul><li><b>Volume and brightness</b> pop-ups</li><li><b>Light and dark</b> follow Windows</li><li><b>Every screen size</b> and DPI</li><li><b>Touch screens</b></li><li><b>Signed updates</b> from GitHub</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORTED WINDOWS -->
+<section class="section" id="windows" aria-labelledby="windows-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 id="windows-title">Made for <em>two Windows.</em></h2>
+      <p class="lede">Perch is tested on the two versions people use today, and only those.</p>
+    </div>
+    <div class="support reveal">
+      <div><h3>Windows 11</h3><p>Every release of Windows 11.</p></div>
+      <div><h3>Windows 10 <em>22H2</em></h3><p>The final feature update of Windows 10. Older versions are not supported.</p></div>
+    </div>
+    <p class="support-notes reveal"><span>Any screen size and scaling</span><span>Touch screens</span><span>Light and dark follow Windows</span><span>Check yours: Win + R, type <b>winver</b></span></p>
+  </div>
+</section>
+
+<!-- FAQ (matches the FAQPage JSON-LD in the head) -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div class="reveal"><h2 id="faq-title">Questions, <em>answered.</em></h2></div>
+    <div class="faq-list reveal">
+      <details><summary>Is Perch free?<span class="plus" aria-hidden="true"></span></summary><p>Yes. Perch costs nothing, at home or at work. The licence lets you use it on any PC you own or manage; it does not let you copy, change, share or sell it.</p></details>
+      <details><summary>Which versions of Windows does Perch run on?<span class="plus" aria-hidden="true"></span></summary><p>Windows 11 and Windows 10 version 22H2. Older versions of Windows 10 are not supported. To check yours, press Win + R, type winver and press Enter.</p></details>
+      <details><summary>What happens over full-screen games and videos?<span class="plus" aria-hidden="true"></span></summary><p>The dock stays hidden over full-screen apps and shows up only when you press the Start key, the same rule the Windows taskbar follows.</p></details>
+      <details><summary>How do updates work?<span class="plus" aria-hidden="true"></span></summary><p>Each release on GitHub carries a small file called latest.json. Perch reads it to learn whether a newer version exists and offers you the update. Every installer is signed, and Perch refuses an update whose signature does not match.</p></details>
+      <details><summary>Does Perch collect my data?<span class="plus" aria-hidden="true"></span></summary><p>No personal data. Perch counts installs and daily use anonymously by fetching tiny files from its GitHub releases. GitHub counts the downloads; nothing else is sent.</p></details>
+      <details><summary>Does Perch work with touch screens and high-DPI displays?<span class="plus" aria-hidden="true"></span></summary><p>Yes. Perch works on every screen size and scaling level, and on touch screens.</p></details>
+      <details><summary>How do I remove Perch?<span class="plus" aria-hidden="true"></span></summary><p>Open Settings, then Apps, then Installed apps. Find Perch and choose Uninstall.</p></details>
+      <details><summary>Is the source code available?<span class="plus" aria-hidden="true"></span></summary><p>No. The source code is private. The public GitHub repository holds the installers, release notes, the update file and the licence.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="finale" id="download" aria-labelledby="download-title">
+  <div class="wallpaper" aria-hidden="true"><span class="horizon"><i></i></span><svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 170 C 160 120 300 150 440 128 S 760 70 900 110 S 1120 150 1200 120 L1200 300 L0 300 Z"/><path d="M0 220 C 200 190 360 214 560 196 S 920 160 1200 200 L1200 300 L0 300 Z"/></svg></div>
+  <svg class="finale-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-mark"/></svg>
+  <div class="wrap finale-inner reveal">
+    <span class="eyebrow">Version 1.1 · Free</span>
+    <h2 id="download-title">Give your desktop <em>somewhere to land.</em></h2>
+    <a class="btn btn--grad" href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><svg aria-hidden="true"><use href="#i-down"/></svg>Download Perch for Windows</a>
+    <p class="meta">Windows 11 and Windows 10 22H2 · Installer from <a href="https://github.com/omanishay-cyber/perch/releases/latest">GitHub Releases</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Anish Trivedi. All rights reserved.</span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/omanishay-cyber/perch/releases">Releases</a>
+      <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a>
+      <a href="https://github.com/omanishay-cyber/perch/blob/main/LICENSE">Licence</a>
+      <a href="https://github.com/omanishay-cyber/perch"><svg width="16" height="16" aria-hidden="true" style="margin-right:6px"><use href="#i-github"/></svg>GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
