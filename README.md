@@ -1,16 +1,16 @@
-<!-- Generated pictures live in docs/assets/readme/. Every one is the real app with made-up data, on a wallpaper painted on a local GPU. -->
+<!-- Generated pictures live in docs/assets/readme/. Every one is the real app with made-up data, on a wallpaper painted on a local GPU. The File Explorer pictures are real Windows screenshots. -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-banner-light.webp"><img src="docs/assets/readme/b-banner.webp" alt="Perch: the Windows taskbar, reconsidered. The real notch opened at the top of the screen and the real dock at the bottom, over a mountain lake at night." width="100%"></picture></p>
 
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1-4191E1?style=flat-square" alt="Version 1.1"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
+<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.3-4191E1?style=flat-square" alt="Version 1.1.3"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
 
-<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
+<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
 
 Perch sits on top of Windows and replaces the three things you look at all day. The taskbar becomes a dock. The empty strip at the top of your screen becomes a notch that shows the time, the weather, your music and how your PC is doing. The Start button opens a menu of its own. Your apps, files and settings stay exactly where they are.
 
-**12** notch designs · **12** Start menu designs in **21** flavors · **3** dock styles · **10** palettes · **2** looks · **$0**, at home or at work
+**12** notch designs · **18** Start menu designs in **29** flavors · **3** dock styles · **7** icon packs · **10** palettes · **2** looks · **$0**, at home or at work
 
 ## The notch
 
@@ -23,7 +23,8 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-wifi.webp" alt="The Wi-Fi view" width="100%"><br><b>Wi-Fi without Settings</b><br>Scan, connect, disconnect and forget networks.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-bluetooth.webp" alt="The Bluetooth view" width="100%"><br><b>Bluetooth, with battery</b><br>Pair, connect, and see how much charge your headphones have left.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-sound.webp" alt="The Sound view" width="100%"><br><b>A volume for every app</b><br>Pick the speakers or headphones, then set and mute each app on its own.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-clipboard.webp" alt="Clipboard history" width="100%"><br><b>A clipboard you can read</b><br>Everything you copied, newest first, pictures too. Pin what you want to keep. Private copies are skipped. A quick note sits one tab over and saves itself.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-notifications.webp" alt="Notifications grouped by app" width="100%"><br><b>Notifications, in order</b><br>Recent Windows notifications grouped by app, with a count on the notch.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-power.webp" alt="The power menu" width="100%"><br><b>Power, with a safety catch</b><br>Lock, Sleep, Hibernate, Shut down, Full shut down, Restart. Restart and Shut down ask for a second click.</td></tr>
-<tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-shelf.webp" alt="The shelf" width="100%"><br><b>A shelf for your files</b><br>Drag files onto the notch, carry on working, then drag them out where they belong.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-alerts.webp" alt="Four alerts" width="100%"><br><b>Small news, in the right place</b><br>Caps Lock, Num Lock, charging, low battery, a USB drive with an Open button, Bluetooth devices, a preview of a copied picture.</td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-shelf.webp" alt="The shelf" width="100%"><br><b>A shelf for your files</b><br>Drag files onto the notch, carry on working, then drag them out where they belong.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-alerts.webp" alt="Four alerts" width="100%"><br><b>Small news, in the right place</b><br>Caps Lock, Num Lock, charging, low battery, a USB drive with Open and Eject, Bluetooth devices, a preview of a copied picture.</td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-update.webp" alt="Perch 1.1.3 is ready, with an Update button" width="100%"><br><b>A new version asks first</b><br>The notch says Perch 1.1.3 is ready, with an Update button, and nothing installs until you press it. Turn on Auto update and it installs by itself, an hour after a release, with no question.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-usb.webp" alt="USB drive connected, with Open and Eject" width="100%"><br><b>USB sticks: Open and Eject</b><br>Plug one in and the notch offers both, one click either way.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-privacy.webp" alt="Privacy dots beside the notch" width="100%"><br><b>Who is listening</b><br>An orange dot while an app uses the microphone, green for the camera. Point at it to see which app.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-gamestrip.webp" alt="The game strip" width="100%"><br><b>Out of your way in games</b><br>The notch steps aside over full-screen apps. Over a game you can have a tiny strip with CPU, GPU and RAM instead.</td></tr>
 </table>
 
@@ -77,6 +78,7 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-k-magnify.webp" alt="Chrome magnified under the pointer" width="100%"><br><b>The one you aim at is the biggest</b><br>Icons grow as your pointer passes. You choose the zoom size, and how many neighbours grow with it.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-k-preview.webp" alt="Previews of two windows" width="100%"><br><b>See the window before you click</b><br>Hover an open app for live previews of each of its windows.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-k-extras.webp" alt="The right end of the dock" width="100%"><br><b>Drives, folders, Recycle Bin</b><br>Fixed, removable and network drives, your special folders, any folder you add, and the Recycle Bin at the end.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-k-buttons.webp" alt="The left end of the dock" width="100%"><br><b>The buttons you still want</b><br>Search, Task View and Show desktop, each one optional. Your own picture on the Start button, if you like.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-popups.webp" alt="The volume and brightness pop-ups" width="100%"><br><b>Volume and brightness pop-ups</b><br>They match the rest of Perch, with a mixer for each app. Or keep the Windows ones.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-k-preview-light.webp" alt="The dock in the light theme" width="100%"><br><b>Light or dark, like the rest</b><br>The dock follows your theme, and can copy the notch's design too. Over a full-screen game or video it stays hidden until you press the Start key, the same rule the taskbar follows.</td></tr>
+<tr><td colspan="2" valign="top"><img src="docs/assets/readme/c-k-usb.webp" alt="The dock with a USB stick beside the drives and its right-click menu open on Eject" width="100%"><br><b>A USB stick shows up on the dock</b><br>It stays beside your drives while it is in. Right-click it for Eject, without hunting for the tray icon.</td></tr>
 </table>
 
 <p align="center"><img src="docs/assets/readme/z-dock.webp" alt="The three dock styles fanned out as a stack of cards." width="100%"></p>
@@ -87,7 +89,7 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 
 ## The Start menu
 
-<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-start-light.webp"><img src="docs/assets/readme/b-start.webp" alt="The Start menu: twelve designs, one quick box. The real menu over twilight dunes, with 12*7 typed in search and the answer, 84." width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-start-light.webp"><img src="docs/assets/readme/b-start.webp" alt="The Start menu: eighteen designs, one quick box. The real menu over twilight dunes, with 12*7 typed in search and the answer, 84." width="100%"></picture></p>
 
 <table>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-f-calc.webp" alt="Search answering 84" width="100%"><br><b>It does the sum: <code>12*7</code> is 84</b><br>Type arithmetic and the answer is the best match, before any web result. <code>(3.5*4)^2</code>, <code>200*15%</code>. Enter copies it.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-f-unit.webp" alt="Search answering 6.21371 mi" width="100%"><br><b>And converts: <code>10 km to mi</code></b><br>Lengths, weights, temperatures: <code>5kg in lb</code>, <code>100 f to c</code>. The answer is 6.21371 mi, one key from your clipboard.</td></tr>
@@ -98,7 +100,7 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-f-keys.webp" alt="A file highlighted by keyboard focus" width="100%"><br><b>All from the keyboard</b><br>Arrows follow what is on screen, whatever the design. Tab moves between sections, typing searches, Esc always goes back.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-f-letters.webp" alt="The letter grid" width="100%"><br><b>Jump to any letter</b><br>All apps comes with folders and a letter grid. Press a letter and you are there.</td></tr>
 </table>
 
-<p align="center"><img src="docs/assets/readme/z-start.webp" alt="All twelve Start menu designs fanned out as a stack of cards." width="100%"></p>
+<p align="center"><img src="docs/assets/readme/z-start.webp" alt="All eighteen Start menu designs fanned out as a stack of cards." width="100%"></p>
 
 - **Windows 11**: Search, Pinned and Recommended, the layout you know, with Perch's widgets under it.
 - **Modern**: All apps on the left, a big pinned grid, Recommended and widgets on the right.
@@ -112,16 +114,72 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 - **Everblush**: A dark theme in soft greens and pinks, in two layouts.
 - **Rosé Pine**: Windows 11 in Rosé Pine, and Rosé Pine Dawn when your theme is light.
 - **SynthWave '84**: Windows 11 in the colours of a late-night arcade.
+- **Petal**: Mint pins and a blue-violet app list in mirrored petal corners, a glass bar below.
+- **Cosmic**: A tall panel with a big All apps list and a cyan to pink rim of light.
+- **Aether**: Places, All apps and Pinned in one wide panel, rimmed in your accent colour.
+- **Silk**: App Library and a Launch Deck of large tiles over a slim dock, in rose and plum.
+- **Neon Rig**: Dark gaming glass with cut corners and thin pink and purple edges.
+- **Velora**: All apps, Pinned and Recommended in three frosted columns, or a wide Pinned deck.
+
+### Six new menus
+
+They search the same and hold the same pins as the other twelve. One click each in Settings.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-petal-light.webp"><img src="docs/assets/readme/c-six-petal.webp" alt="The real Petal Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Petal.** Two big corners, mirrored like a petal. Mint for your pins, blue-violet for your apps, a glass bar below.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-cosmic-light.webp"><img src="docs/assets/readme/c-six-cosmic.webp" alt="The real Cosmic Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Cosmic.** One tall panel, a long All apps list, and a rim of light that runs from cyan to pink.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-aether-light.webp"><img src="docs/assets/readme/c-six-aether.webp" alt="The real Aether Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Aether.** Places, All apps and Pinned side by side in one wide panel, rimmed in your own accent colour.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-silk-light.webp"><img src="docs/assets/readme/c-six-silk.webp" alt="The real Silk Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Silk.** An App Library beside a Launch Deck of large tiles, over a slim dock, in rose and plum.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-neonrig-light.webp"><img src="docs/assets/readme/c-six-neonrig.webp" alt="The real Neon Rig Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Neon Rig.** Gaming glass. Cut corners, thin pink and purple edges, nothing soft about it.
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-six-velora-light.webp"><img src="docs/assets/readme/c-six-velora.webp" alt="The real Velora Start menu over a real Perch dock." width="100%"></picture></p>
+
+**Velora.** All apps, Pinned and Recommended in three frosted columns. Or two, with a wider deck.
+
+### Every design grows with a tall screen
+
+<p align="center"><img src="docs/assets/readme/c-s-grow.webp" alt="The same Windows 11 design twice at the same icon size: at 1080p with 3 rows of pins, and on a tall screen with 5." width="100%"></p>
+
+On a tall screen, every design grows: more rows of pins, at the same icon size. A 1080p screen looks as it always did.
 
 ## Icon packs
 
-<p align="center"><img src="docs/assets/readme/icon-packs.webp" alt="The same dock in each icon pack: System icons, Cloud, Round, Squircle, Glass, Mono, White and Tinted" width="100%"></p>
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-icons-light.webp"><img src="docs/assets/readme/b-icons.webp" alt="Every icon, one click. A real Perch Start menu and dock in the Cloud icon pack." width="100%"></picture></p>
 
-**One click changes every icon in the dock and the Start menu.** Cloud, Round, Squircle, Glass, Mono, White and Tinted are made from each app's own icon, so they cover every app you have. System icons puts it all back.
+**One click changes every icon in the dock and the Start menu.** Each pack is made from each app's own icon, so it covers every app you have. System icons puts it all back.
 
-**Load your own.** Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads the icons as pictures, runs nothing, and tells you how many it matched.
+<p align="center"><picture><source media="(max-width: 600px)" srcset="docs/assets/readme/z-packs-tall.webp"><img src="docs/assets/readme/z-packs.webp" alt="The same dock in every pack, each one named: Cloud, the largest, then Round, Squircle, Glass, Mono, White, Tinted and System icons." width="100%"></picture></p>
 
-**Apply to Windows too.** Optional and off by default. Folders, drives, This PC, the Recycle Bin and common file types in File Explorer follow your pack, through Windows' own settings. No system file is touched, and Put Windows icons back restores every original.
+- **Cloud**: Soft lavender and blue, with its own folders, drives and bin.
+- **Round**: A circle tinted from each app's colour.
+- **Squircle**: A soft rounded tile, the same shape for every app.
+- **Glass**: A clear tile with a bright edge.
+- **Mono**: One tone that follows light and dark.
+- **White**: A white mark on the app's colour.
+- **Tinted**: Follows your accent colour.
+
+**Load your own.** Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads them as pictures, runs nothing, and tells you how many icons it matched.
+
+**Apply to Windows too.** Optional, and off by default. Folders, drives, This PC, the Recycle Bin, Network and common file types in File Explorer follow your pack, through Windows' own settings. No system file is touched, and Put Windows icons back restores every original exactly.
+
+<p align="center"><img src="docs/assets/readme/c-i-explorer.webp" alt="Two real File Explorer windows on This PC. Before: the stock drive icon. After: the Cloud drive icon. Downloads, Documents and Pictures in the side panel look the same in both." width="100%"></p>
+
+**What it does not reach.** Documents, Downloads and Pictures in Explorer's side panel keep their stock icons, and so do apps' own toolbars and Settings.
+
+<p align="center"><img src="docs/assets/readme/c-i-folders.webp" alt="A real File Explorer window on the Documents folder with two lavender Cloud folders in the list." width="100%"></p>
 
 ## The Windows taskbar and Perch
 
@@ -135,7 +193,8 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 | Music with album art and a visualizer | A small media flyout | **A full player, five visualizers, live lyrics** |
 | Volume per app | A Settings page or the mixer | **In the notch** |
 | A timer and a stopwatch | The Clock app | **In the notch** |
-| Start menu designs | 1 | **12, in 21 flavors** |
+| Start menu designs | 1 | **18, in 29 flavors** |
+| Icon sets | 1 | **7 built in, or load your own** |
 | Price | Comes with Windows | **Free** |
 
 ## Everything in 1.1
@@ -147,17 +206,17 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 </details>
 <details><summary><b>Notch views and alerts</b></summary>
 
-<ul><li><b>Wi-Fi:</b> scan, connect, disconnect, forget</li><li><b>Bluetooth:</b> pair, connect, disconnect, see battery levels</li><li><b>Sound:</b> pick the output, set each app's volume, mute each app</li><li><b>Clipboard:</b> history with pins and pictures, and a quick note that saves itself</li><li><b>Notifications:</b> recent Windows notifications grouped by app, with a count on the notch</li><li><b>Power:</b> Lock, Sleep, Hibernate, Shut down, Full shut down, Restart; the risky ones ask for a second click</li><li><b>Shelf:</b> drag files onto the notch and pick them up later</li><li><b>Alerts:</b> Caps Lock, Num Lock, charging, low battery, USB drives with Open, Bluetooth devices, copied pictures</li><li><b>Privacy dots:</b> orange for the microphone, green for the camera; point at one to see which app</li><li><b>Game strip:</b> CPU, GPU and RAM over a full-screen game</li><li><b>Hide or show</b> with a shortcut (Ctrl+Alt+D by default), or automatically over full-screen apps</li><li><b>Peek:</b> reveal it as soon as the pointer touches the top edge, or after a delay you set</li></ul>
+<ul><li><b>Wi-Fi:</b> scan, connect, disconnect, forget</li><li><b>Bluetooth:</b> pair, connect, disconnect, see battery levels</li><li><b>Sound:</b> pick the output, set each app's volume, mute each app</li><li><b>Clipboard:</b> history with pins and pictures, and a quick note that saves itself</li><li><b>Notifications:</b> recent Windows notifications grouped by app, with a count on the notch</li><li><b>Power:</b> Lock, Sleep, Hibernate, Shut down, Full shut down, Restart; the risky ones ask for a second click</li><li><b>Shelf:</b> drag files onto the notch and pick them up later</li><li><b>Alerts:</b> Caps Lock, Num Lock, charging, low battery, USB drives with Open and Eject, Bluetooth devices, copied pictures, a new version with Update</li><li><b>Privacy dots:</b> orange for the microphone, green for the camera; point at one to see which app</li><li><b>Game strip:</b> CPU, GPU and RAM over a full-screen game</li><li><b>Hide or show</b> with a shortcut (Ctrl+Alt+D by default), or automatically over full-screen apps</li><li><b>Peek:</b> reveal it as soon as the pointer touches the top edge, or after a delay you set</li></ul>
 
 </details>
 <details><summary><b>The dock</b></summary>
 
-<ul><li><b>Magnification:</b> set how big the icon under the pointer grows and how many beside it grow too</li><li><b>Live previews</b> of every window on hover</li><li><b>Three styles:</b> Attached, Floating, Strip; a choice of edge shapes where it meets the screen</li><li><b>Extras:</b> fixed, removable and network drives, special folders, any folder you add, the Recycle Bin</li><li><b>Buttons:</b> Search, Task View and Show desktop, each one optional</li><li><b>Bounce</b> when an app opens, higher when it needs you</li><li><b>Unread badges</b> on an app's icon</li><li><b>Win+1 to Win+9</b> open pinned apps</li><li><b>Smart hide:</b> steps away from maximized windows and full-screen apps, and comes back after</li><li><b>Full width when a window is maximized,</b> or always; Icons only; a divider before unpinned apps</li><li><b>Lock icons</b> so nothing gets dragged off by accident</li><li><b>Your own Start button picture,</b> and a Show desktop corner</li></ul>
+<ul><li><b>Magnification:</b> set how big the icon under the pointer grows and how many beside it grow too</li><li><b>Live previews</b> of every window on hover</li><li><b>Three styles:</b> Attached, Floating, Strip; a choice of edge shapes where it meets the screen</li><li><b>Extras:</b> fixed, removable and network drives, special folders, any folder you add, the Recycle Bin</li><li><b>USB sticks</b> show on the dock while they are in, with Eject on a right-click</li><li><b>Buttons:</b> Search, Task View and Show desktop, each one optional</li><li><b>Bounce</b> when an app opens, higher when it needs you</li><li><b>Unread badges</b> on an app's icon</li><li><b>Win+1 to Win+9</b> open pinned apps</li><li><b>Smart hide:</b> steps away from maximized windows and full-screen apps, and comes back after</li><li><b>Full width when a window is maximized,</b> or always; Icons only; a divider before unpinned apps</li><li><b>Lock icons</b> so nothing gets dragged off by accident</li><li><b>Your own Start button picture,</b> and a Show desktop corner</li></ul>
 
 </details>
 <details><summary><b>The Start menu</b></summary>
 
-<ul><li><b>12 designs, 21 flavors,</b> one click each, always opening in the middle</li><li><b>Search:</b> apps, files, folders, Windows Settings pages, tools and the web, with filter chips and a preview pane</li><li><b>Calculator:</b> <code>12*7</code>, <code>(3.5*4)^2</code>, <code>200*15%</code>; Enter copies the answer</li><li><b>Unit converter:</b> <code>10 km to mi</code>, <code>5kg in lb</code>, <code>100 f to c</code></li><li><b>Run box:</b> type <code>regedit</code> or a path, press Enter</li><li><b>Jump lists</b> for each app on a right-click</li><li><b>Pinned folders:</b> drop one pin on another; rename, take apart, reorder</li><li><b>Suggested now:</b> the apps you open at this hour, weekdays apart from weekends; old habits fade</li><li><b>Most used,</b> Recommended files and newly installed apps</li><li><b>Widgets strip:</b> weather, your default printer, today's files</li><li><b>All apps</b> with folders and a grid to jump to any letter</li><li><b>Keyboard:</b> arrows follow what is on screen; type to search; Esc always goes back</li><li><b>Size</b> from 50% to 130%, <b>opacity</b> from 10% to solid, frosted glass on or off</li></ul>
+<ul><li><b>18 designs, 29 flavors,</b> one click each, always opening in the middle</li><li><b>Search:</b> apps, files, folders, Windows Settings pages, tools and the web, with filter chips and a preview pane</li><li><b>Calculator:</b> <code>12*7</code>, <code>(3.5*4)^2</code>, <code>200*15%</code>; Enter copies the answer</li><li><b>Unit converter:</b> <code>10 km to mi</code>, <code>5kg in lb</code>, <code>100 f to c</code></li><li><b>Run box:</b> type <code>regedit</code> or a path, press Enter</li><li><b>Jump lists</b> for each app on a right-click</li><li><b>Pinned folders:</b> drop one pin on another; rename, take apart, reorder</li><li><b>Suggested now:</b> the apps you open at this hour, weekdays apart from weekends; old habits fade</li><li><b>Most used,</b> Recommended files and newly installed apps</li><li><b>Widgets strip:</b> weather, your default printer, today's files</li><li><b>All apps</b> with folders and a grid to jump to any letter</li><li><b>Keyboard:</b> arrows follow what is on screen; type to search; Esc always goes back</li><li><b>Grows with the screen:</b> more rows on a tall monitor, at the same icon size</li><li><b>Size</b> from 50% to 130%, <b>opacity</b> from 10% to solid, frosted glass on or off</li></ul>
 
 </details>
 <details><summary><b>Looks</b></summary>
@@ -165,9 +224,14 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 <ul><li><b>12 notch designs,</b> each with its own shape, edge and spring</li><li><b>Two looks:</b> Simple and Graphics</li><li><b>10 palettes:</b> Theme, Owl Night, Onyx, Graphite, Harbor, Fjord, Moss, Mocha, Orchid, Pearl</li><li><b>Ready-made looks:</b> one click sets the theme, colour and opacity</li><li><b>Same look for notch and dock,</b> or keep them apart</li><li><b>Your own colour,</b> with saturation, brightness, opacity and finish</li><li><b>Spring feel:</b> Design's own, Smooth, Perch, Bouncy, Snappy</li><li><b>Light and dark</b> that follow Windows, or stay where you set them</li><li><b>UI and font size,</b> and rounded screen corners</li></ul>
 
 </details>
+<details><summary><b>Icon packs</b></summary>
+
+<ul><li><b>Seven built in:</b> Cloud, Round, Squircle, Glass, Mono, White, Tinted; System icons puts it all back</li><li><b>Load your own:</b> PNG, ICO or a Resource Redirect pack from a folder, read as pictures, nothing runs</li><li><b>Apply to Windows too:</b> off by default; folders, drives, This PC, Recycle Bin, Network and common file types in File Explorer</li><li><b>Put Windows icons back</b> restores every original exactly</li></ul>
+
+</details>
 <details><summary><b>Everything else</b></summary>
 
-<ul><li><b>Volume and brightness pop-ups</b> with a per-app mixer, or keep the Windows ones</li><li><b>Launch at login,</b> or not</li><li><b>Auto update,</b> and a small green dot when an update is ready</li><li><b>Settings search</b> that jumps to the right row</li><li><b>Report a bug</b> from About, with your Perch version and Windows build filled in</li><li><b>Any screen:</b> every size and scaling level, and touch screens</li></ul>
+<ul><li><b>Volume and brightness pop-ups</b> with a per-app mixer, or keep the Windows ones</li><li><b>Launch at login,</b> or not</li><li><b>Updates:</b> the notch tells you and waits for Update, or Auto update installs by itself; a small green dot when one is ready</li><li><b>Settings search</b> that jumps to the right row</li><li><b>Report a bug</b> from About, with your Perch version and Windows build filled in</li><li><b>Any screen:</b> every size and scaling level, and touch screens</li></ul>
 
 </details>
 
@@ -181,11 +245,11 @@ To remove Perch, open **Settings > Apps > Installed apps**, find Perch and click
 
 ## Updates and privacy, plainly
 
-**Updates.** Each release here carries a small file called `latest.json`. Perch reads it to learn whether a newer version exists. With Auto update on, it installs by itself. Turn that off and nothing changes without you. Perch refuses any update whose signature does not match.
+**Updates.** When Perch starts and every 6 hours, it reads a small file called `latest.json` from the release page here, whatever the Auto update switch says. When there is a new version the notch says so and waits for you to press Update. With Auto update on, which is off until you turn it on, it installs by itself with no question, an hour after the release. Perch refuses any update whose signature does not match.
 
-**The counter.** Once after install and once a day, Perch downloads a tiny file from its release page, and GitHub's download count is the count. No id, no settings, no files go with it. **Settings > About > Count this install anonymously** turns it off.
+**The counter.** Once after install and once a day, Perch downloads a tiny file from its release page, and GitHub's download count is the count. No id, no settings, no files go with it. **Settings > About > Privacy > Count this install anonymously** turns it off.
 
-**The rest of what goes over the internet.** The weather comes from Open-Meteo. With no city picked, your rough location comes from your IP address through ipapi.co, or ip-api.com if that fails. Live lyrics, off until you turn them on, are looked up on lrclib.net once per song. Web searches you choose open in your browser.
+**The rest of what goes over the internet.** The weather comes from Open-Meteo. A fresh install finds its city from your IP address through ipapi.co, or ip-api.com if that fails, until you pick one. Live lyrics, off until you turn them on, are then looked up on lrclib.net once per song. Web searches you choose open in your browser.
 
 ## Questions
 
@@ -219,19 +283,29 @@ The dock stays hidden over full-screen apps and shows up only when you press the
 SmartScreen warns about apps it has not seen many times yet. Click More info, then Run anyway. The file comes straight from Perch's GitHub release page.
 
 </details>
+<details><summary><b>Can I use my own icons?</b></summary>
+
+Yes. Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads them as pictures, runs nothing, and tells you how many icons it matched.
+
+</details>
+<details><summary><b>Do icon packs change Windows?</b></summary>
+
+Only if you ask. A pack changes what Perch draws. Apply to Windows too is off by default and reaches folders, drives, This PC, the Recycle Bin, Network and common file types in File Explorer, through Windows' own settings. Put Windows icons back restores every original exactly, and so does uninstalling Perch. Documents, Downloads and Pictures in Explorer's side panel keep their stock icons, as do apps' own toolbars and Settings.
+
+</details>
 <details><summary><b>How do updates work?</b></summary>
 
-Each release on GitHub carries a small file called latest.json. With Auto update on, Perch reads it to learn whether a newer version exists and installs it by itself; with it off, nothing installs by itself. Perch refuses an update whose signature does not match.
+When Perch starts and every 6 hours, it reads a small file called latest.json from its GitHub release page, whatever the Auto update switch says. When a new version is out, the notch says so and waits: press Update and Perch installs it and restarts. With Auto update on, which is off until you turn it on, a new version installs by itself with no question once it is an hour old. Perch refuses an update whose signature does not match.
 
 </details>
 <details><summary><b>Does Perch collect my data?</b></summary>
 
-No personal data. Once after install and once a day, Perch downloads a tiny counter file from its release page, and GitHub's download count is the count. No id, no settings, no files are sent. Settings, About, Count this install anonymously turns it off.
+No personal data. Once after install and once a day, Perch downloads a tiny counter file from its release page, and GitHub's download count is the count. No id, no settings, no files are sent. Settings, About, Privacy, Count this install anonymously turns it off.
 
 </details>
 <details><summary><b>What else goes over the internet?</b></summary>
 
-The weather comes from Open-Meteo. If you have not picked a city, your rough location comes from your IP address through ipapi.co, or ip-api.com if that fails. Live lyrics, off until you turn them on, look up each song on lrclib.net. Web searches you choose open in your browser. That is all.
+The update check above. The weather, from Open-Meteo. A fresh install finds its city from your IP address through ipapi.co, or ip-api.com if that fails, until you pick a city yourself. Live lyrics, off until you turn them on, then look up each song on lrclib.net. Web searches you choose open in your browser. That is all.
 
 </details>
 <details><summary><b>Does Perch work with touch screens and high-DPI displays?</b></summary>
@@ -262,4 +336,4 @@ Perch is free to use, at home and at work. You may not copy, change, take apart,
 
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center">Made by <a href="https://github.com/omanishay-cyber">Anish Trivedi</a>. Every picture is the real app with made-up data, on a wallpaper painted on a local GPU.</p>
+<p align="center">Made by <a href="https://github.com/omanishay-cyber">Anish Trivedi</a>. Every picture is the real app with made-up data, on a wallpaper painted on a local GPU. The File Explorer pictures are real Windows screenshots.</p>
