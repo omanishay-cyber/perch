@@ -171,7 +171,9 @@ On a tall screen, every design grows: more rows of pins, at the same icon size. 
 - **White**: A white mark on the app's colour.
 - **Tinted**: Follows your accent colour.
 
-**Load your own.** Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads them as pictures, runs nothing, and tells you how many icons it matched.
+**Load your own.** Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads them as pictures, runs nothing, and tells you how many icons it matched. You'll find many free sets at [Link Vegas Theme](https://www.linkvegastheme.com/). Thanks to them and to the artists behind each set.
+
+**No Windhawk needed.** Perch reads Resource Redirect sets itself and applies them to folders, drives and file types. A few places, such as the File Explorer side panel, still keep Windows' own icons.
 
 **Apply to Windows too.** Optional, and off by default. Folders, drives, This PC, the Recycle Bin, Network and common file types in File Explorer follow your pack, through Windows' own settings. No system file is touched, and Put Windows icons back restores every original exactly.
 
