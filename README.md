@@ -113,6 +113,16 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 - **Rosé Pine**: Windows 11 in Rosé Pine, and Rosé Pine Dawn when your theme is light.
 - **SynthWave '84**: Windows 11 in the colours of a late-night arcade.
 
+## Icon packs
+
+<p align="center"><img src="docs/assets/readme/icon-packs.webp" alt="The same dock in each icon pack: System icons, Cloud, Round, Squircle, Glass, Mono, White and Tinted" width="100%"></p>
+
+**One click changes every icon in the dock and the Start menu.** Cloud, Round, Squircle, Glass, Mono, White and Tinted are made from each app's own icon, so they cover every app you have. System icons puts it all back.
+
+**Load your own.** Point Perch at a folder of PNG or ICO files, or a Resource Redirect pack. Perch reads the icons as pictures, runs nothing, and tells you how many it matched.
+
+**Apply to Windows too.** Optional and off by default. Folders, drives, This PC, the Recycle Bin and common file types in File Explorer follow your pack, through Windows' own settings. No system file is touched, and Put Windows icons back restores every original.
+
 ## The Windows taskbar and Perch
 
 | What you want | Windows | Perch |
