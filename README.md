@@ -23,7 +23,7 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 - **Dock thumbnails stay up** while you rest on one and its window shows full size, as on the Windows 11 taskbar.
 - **Timer and stopwatch** have a panel of their own, one round button in Controls.
 - **More for touch screens**: swipe a thumbnail up to close its window, press and hold a dock icon to move it, and the touch keyboard comes up for a text box.
-- **Fixes**: dropping files on the shelf could crash Perch; the month arrows no longer move with the month's name; the Windows taskbar no longer flashes up during an update; desktop icons keep their places when Perch closes; updates install without an installer window.
+- **Fixes**: dropping files on the shelf could crash Perch; the month arrows no longer move with the month's name.
 
 ## The notch
 
