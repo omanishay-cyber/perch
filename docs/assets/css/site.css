@@ -194,8 +194,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .opener p { margin-top: var(--s-5); font-size: clamp(1.125rem, 1rem + 0.62vw, 1.625rem); line-height: 1.38; color: var(--photo-soft); max-width: 27em; }
 .opener-ui { position: absolute; z-index: 0; transform: translate3d(0, calc(var(--p) * var(--ui-shift, -40px)), 0); will-change: transform; }
 .opener-ui img { width: 100%; }
-.opener--notch .opener-ui { top: 0; right: clamp(0px, 5vw, 110px); width: min(62vw, 1140px); }
-.opener--notch .opener-copy { padding-right: 0; }
+.opener--notch .opener-ui, .opener--calendar .opener-ui { top: 0; right: clamp(0px, 5vw, 110px); width: min(62vw, 1140px); }
+.opener--notch .opener-copy, .opener--calendar .opener-copy { padding-right: 0; }
 .opener--dock .opener-copy { padding-bottom: clamp(150px, 15vw, 210px); }
 .opener--dock .dock-stage { position: absolute; bottom: 28px; }
 .opener--start .opener-ui { bottom: -2%; right: clamp(0px, 7vw, 150px); width: min(44vw, 720px); --ui-shift: -70px; }
@@ -387,7 +387,7 @@ details.list-group[open] summary::after { transform: rotate(45deg); }
   .dock-item.opt, .dock-sep.opt { display: none; }
   .opener { min-height: 0; padding-top: 0; }
   .opener-ui { position: relative; inset: auto !important; width: 100% !important; transform: none; }
-  .opener--notch .opener-ui { padding-top: 0; }
+  .opener--notch .opener-ui, .opener--calendar .opener-ui { padding-top: 0; }
   .opener--start .opener-ui { width: 86% !important; margin: 40px auto 0; }
   .opener--dock { padding-top: 200px; }
   .opener--dock .opener-copy { padding-bottom: 110px; }
@@ -414,7 +414,7 @@ details.list-group[open] summary::after { transform: rotate(45deg); }
 @media (prefers-reduced-motion: reduce) {
   .js .rise, .js .rv { transform: none; transition: opacity 240ms linear; transition-delay: 0ms; }
   .hero-plate, .opener-plate, .finale-plate, .opener-ui { transform: none !important; }
-  .opener--start .opener-ui, .opener--notch .opener-ui { transform: none !important; }
+  .opener--start .opener-ui, .opener--notch .opener-ui, .opener--calendar .opener-ui { transform: none !important; }
   .island, .island-wrap.is-open .island { transition: clip-path 1ms linear; }
   .f-pic img, .btn, .dock-item { transition: none !important; }
   .hero-start { transition: opacity 200ms linear, visibility 0s; transform: translateX(-50%); }
