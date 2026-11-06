@@ -4,22 +4,22 @@
 
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.6-4191E1?style=flat-square" alt="Version 1.1.6"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
+<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.7-4191E1?style=flat-square" alt="Version 1.1.7"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
 
-<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-116">New in 1.1.6</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
+<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-117">New in 1.1.7</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
 
 Perch sits on top of Windows and replaces the three things you look at all day. The taskbar becomes a dock. The empty strip at the top of your screen becomes a notch that shows the time, the weather, your music and how your PC is doing. The Start button opens a menu of its own. Your apps, files and settings stay exactly where they are.
 
-**12** notch designs · **4** calendar designs · **18** Start menu designs in **29** flavors · **3** dock styles · **7** icon packs · **10** palettes · **2** looks · **$0**, at home or at work
+**12** notch designs · **4** calendar designs · **18** Start menu designs in **29** flavors · **3** dock styles · **6** icon styles and the Cloud set · **10** palettes · **2** looks · **$0**, at home or at work
 
-## New in 1.1.6
+## New in 1.1.7
 
 - **A calendar in the notch.** The holidays of any country, or several at once, in four designs: Night River, Almanac, Festival Light and Lantern Thread.
 - **Painted pictures for the big holidays**, such as Christmas, New Year's Day, Thanksgiving and the Fourth of July.
-- **A painted place for a free day.** Tap a date with nothing on it for one of 60 places, by day or by night.
+- **A painted place for a free day.** Tap a date with nothing on it for one of 60 places, by day, at dusk or by night.
 - **Your own calendar.** A step-by-step guide gets the link from Google Calendar, Outlook or iCloud. Perch only reads it, and checks for new events every 15 minutes.
 - **Normal or Small.** Pick the size of the calendar panel.
-- **It opens on today**, and a holiday that is today leads the month. Choose a faith, if you like, and its days lead the month too.
+- **It opens on today**, and a holiday that is today leads the month. New users start with United States holidays; add any country. No faith is chosen at first; pick one and its days lead the month.
 - **Dock thumbnails stay up** while you rest on one and its window shows full size, as on the Windows 11 taskbar.
 - **Timer and stopwatch** have a panel of their own, one round button in Controls.
 - **More for touch screens**: swipe a thumbnail up to close its window, press and hold a dock icon to move it, and the touch keyboard comes up for a text box.
@@ -27,7 +27,7 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 
 ## The notch
 
-<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-notch-light.webp"><img src="docs/assets/readme/b-notch.webp" alt="The notch: everything, one hover up. The calendar and timer panel hanging from the top of the screen over a misty forest." width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-notch-light.webp"><img src="docs/assets/readme/b-notch.webp" alt="The notch: everything, one hover up. The notch calendar in Night River, with Halloween in 15 days, hanging from the top of the screen over a misty forest." width="100%"></picture></p>
 
 <table>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-controls.webp" alt="The Controls panel" width="100%"><br><b>One panel for all of it</b><br>Wi-Fi, Bluetooth, dock and notch modes, volume, brightness, and the switches you reach for: Camera off, Do not disturb, Mute mic, Dark mode, Location.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-closed.webp" alt="The notch with its status widgets" width="100%"><br><b>Twelve live numbers, one hover up</b><br>Weather, CPU, RAM, GPU, VRAM, disk, network, battery, volume, brightness, microphone, date. Drag each to the side you want, and leave out what you don't.</td></tr>
@@ -37,13 +37,13 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-sound.webp" alt="The Sound view" width="100%"><br><b>A volume for every app</b><br>Pick the speakers or headphones, then set and mute each app on its own.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-clipboard.webp" alt="Clipboard history" width="100%"><br><b>A clipboard you can read</b><br>Everything you copied, newest first, pictures too. Pin what you want to keep. Private copies are skipped. A quick note sits one tab over and saves itself.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-notifications.webp" alt="Notifications grouped by app" width="100%"><br><b>Notifications, in order</b><br>Recent Windows notifications grouped by app, with a count on the notch.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-power.webp" alt="The power menu" width="100%"><br><b>Power, with a safety catch</b><br>Lock, Sleep, Hibernate, Shut down, Full shut down, Restart. Restart and Shut down ask for a second click.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-shelf.webp" alt="The shelf" width="100%"><br><b>A shelf for your files</b><br>Drag files onto the notch, carry on working, then drag them out where they belong.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-alerts.webp" alt="Four alerts" width="100%"><br><b>Small news, in the right place</b><br>Caps Lock, Num Lock, charging, low battery, a USB drive with Open and Eject, Bluetooth devices, a preview of a copied picture.</td></tr>
-<tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-update.webp" alt="Perch 1.1.3 is ready, with an Update button" width="100%"><br><b>A new version asks first</b><br>The notch says a new version is ready, with an Update button, and nothing installs until you press it. Turn on Auto update and it installs by itself, an hour after a release, with no question.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-usb.webp" alt="USB drive connected, with Open and Eject" width="100%"><br><b>USB sticks: Open and Eject</b><br>Plug one in and the notch offers both, one click either way.</td></tr>
+<tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-update.webp" alt="Perch 1.1.7 is ready, with an Update button" width="100%"><br><b>A new version asks first</b><br>The notch says a new version is ready, with an Update button, and nothing installs until you press it. Turn on Auto update and it installs by itself, an hour after a release, with no question.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-usb.webp" alt="USB drive connected, with Open and Eject" width="100%"><br><b>USB sticks: Open and Eject</b><br>Plug one in and the notch offers both, one click either way.</td></tr>
 <tr><td width="50%" valign="top"><img src="docs/assets/readme/c-n-privacy.webp" alt="Privacy dots beside the notch" width="100%"><br><b>Who is listening</b><br>An orange dot while an app uses the microphone, green for the camera. Point at it to see which app.</td><td width="50%" valign="top"><img src="docs/assets/readme/c-n-gamestrip.webp" alt="The game strip" width="100%"><br><b>Out of your way in games</b><br>The notch steps aside over full-screen apps. Over a game you can have a tiny strip with CPU, GPU and RAM instead.</td></tr>
 </table>
 
 ### A calendar that knows the holidays
 
-Open the notch on its calendar and it starts on today. Pick your country, or several, and their holidays fill the month. The big ones come with a painted picture.
+Open the notch on its calendar and it starts on today. It begins with the holidays of the United States; add any country, or several, and their holidays fill the month too. The big ones come with a painted picture.
 
 <p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-cal-christmas-light.webp"><img src="docs/assets/readme/c-cal-christmas.webp" alt="The real calendar in the Almanac design: December, with Christmas Day in 11 days, over a painted church door with a wreath." width="100%"></picture></p>
 
@@ -61,11 +61,15 @@ Open the notch on its calendar and it starts on today. Pick your country, or sev
 
 **The Fourth of July, in Night River.** The month on the left, the next holiday on the right.
 
-<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-cal-place-light.webp"><img src="docs/assets/readme/c-cal-place.webp" alt="The real calendar on a free day: No events, over a painted mountain road." width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-cal-place-light.webp"><img src="docs/assets/readme/c-cal-place.webp" alt="The real calendar on a free day in the evening: No events, over a painted mountain road, by night in the dark theme and at dusk in the light one." width="100%"></picture></p>
 
-**A day off.** Tap a date with nothing on it and it shows one of 60 painted places, by day or by night, whichever it is now.
+**A day off.** Tap a date with nothing on it and it shows one of 60 painted places. A date keeps its place. After six in the evening the place turns to night on the dark panel, and to dusk on the light one.
 
-Your own events show too. Settings walks you through getting the link from Google Calendar, Outlook or iCloud, step by step. Perch only reads it, and checks for new events every 15 minutes. The panel comes in Normal or Small. Show public holidays only, or religious days and observances as well. Choose a faith, if you like, and its days lead the month.
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/c-cal-day-light.webp"><img src="docs/assets/readme/c-cal-day.webp" alt="The real calendar on a free day in the morning: No events, over the same painted mountain road by day." width="100%"></picture></p>
+
+**By day.** From six in the morning, the same place is painted in daylight. Every one of the 60 comes as day, dusk and night.
+
+Your own events show too. Settings walks you through getting the link from Google Calendar, Outlook or iCloud, step by step. Perch only reads it, and checks for new events every 15 minutes. The panel comes in Normal or Small. Public holidays and observances show at first; religious days are one switch away. No faith is chosen until you pick one; pick one and its days lead the month.
 
 <p align="center"><img src="docs/assets/readme/z-notch.webp" alt="All twelve notch designs fanned out as a stack of cards." width="100%"></p>
 
@@ -198,11 +202,16 @@ On a tall screen, every design grows: more rows of pins, at the same icon size. 
 
 <p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-icons-light.webp"><img src="docs/assets/readme/b-icons.webp" alt="Every icon, one click. A real Perch Start menu and dock in the Cloud icon pack." width="100%"></picture></p>
 
-**One click changes every icon in the dock and the Start menu.** Each pack is made from each app's own icon, so it covers every app you have. System icons puts it all back.
+**One click changes every icon in the dock and the Start menu.** Cloud is a full set, with its own folders, drives and bin. The six styles are drawn on each app's own icon, so they cover every app you have. System icons puts it all back.
 
-<p align="center"><picture><source media="(max-width: 600px)" srcset="docs/assets/readme/z-packs-tall.webp"><img src="docs/assets/readme/z-packs.webp" alt="The same dock in every pack, each one named: Cloud, the largest, then Round, Squircle, Glass, Mono, White, Tinted and System icons." width="100%"></picture></p>
+<p align="center"><picture><source media="(max-width: 600px)" srcset="docs/assets/readme/z-packs-tall.webp"><img src="docs/assets/readme/z-packs.webp" alt="Cloud and six styles, one click: the same dock in the Cloud set, the largest, then in each style, Round, Squircle, Glass, Mono, White and Tinted, and in System icons." width="100%"></picture></p>
+
+The set:
 
 - **Cloud**: Soft lavender and blue, with its own folders, drives and bin.
+
+The styles:
+
 - **Round**: A circle tinted from each app's colour.
 - **Squircle**: A soft rounded tile, the same shape for every app.
 - **Glass**: A clear tile with a bright edge.
@@ -242,7 +251,7 @@ On a tall screen, every design grows: more rows of pins, at the same icon size. 
 
 <details><summary><b>The notch</b></summary>
 
-<ul><li><b>Controls panel:</b> Wi-Fi, Bluetooth, dock and notch modes, volume, brightness and a row of switches</li><li><b>Switches:</b> Camera off, Do not disturb, Mute mic, Dark mode, Location; right-click one for its Windows Settings page</li><li><b>Status widgets:</b> Weather, Battery, CPU, RAM, GPU, VRAM, Disk, Net, Volume, Brightness, Microphone, Date; drag each to the left or right</li><li><b>Clock:</b> 12 or 24 hours, seconds if you like, your own date pattern, a second time zone</li><li><b>Weather:</b> now, and hour by hour, for any city, in °F or °C</li><li><b>Calendar:</b> any country's holidays, four designs, painted pictures for the big holidays, a painted place for a free day, Normal or Small size; it opens on today</li><li><b>Your calendars:</b> Google, Outlook or iCloud, with a step-by-step guide; read only, checked every 15 minutes</li><li><b>Holiday choices:</b> public, religious, observances, and a faith whose days lead the month</li><li><b>Timer:</b> 5, 15, 25 and 50 minute presets, a chime, and a thin line round the notch that fills as it runs</li><li><b>Stopwatch:</b> with laps, beside the timer in its own panel</li><li><b>Music:</b> album art, controls, seeking and a choice of sources; Classic and Compact layouts</li><li><b>Five visualizers</b> and an ambient glow from the album art</li><li><b>Live lyrics:</b> the line being sung, on the closed notch</li><li><b>Media exclusions:</b> apps or sites that never take over the notch</li></ul>
+<ul><li><b>Controls panel:</b> Wi-Fi, Bluetooth, dock and notch modes, volume, brightness and a row of switches</li><li><b>Switches:</b> Camera off, Do not disturb, Mute mic, Dark mode, Location; right-click one for its Windows Settings page</li><li><b>Status widgets:</b> Weather, Battery, CPU, RAM, GPU, VRAM, Disk, Net, Volume, Brightness, Microphone, Date; drag each to the left or right</li><li><b>Clock:</b> 12 or 24 hours, seconds if you like, your own date pattern, a second time zone</li><li><b>Weather:</b> now, and hour by hour, for any city, in °F or °C</li><li><b>Calendar:</b> any country's holidays, starting with the United States; four designs: Night River, Almanac, Festival Light and Lantern Thread; painted pictures for the big holidays; Normal or Small size; it opens on today</li><li><b>Free days:</b> one of 60 painted places, by day, at dusk or by night</li><li><b>Your calendars:</b> Google, Outlook or iCloud, with a step-by-step guide; read only, checked every 15 minutes</li><li><b>Holiday choices:</b> public, religious, observances, and an optional faith whose days lead the month (none at first)</li><li><b>Timer:</b> 5, 15, 25 and 50 minute presets, a chime, and a thin line round the notch that fills as it runs</li><li><b>Stopwatch:</b> with laps, beside the timer in its own panel</li><li><b>Music:</b> album art, controls, seeking and a choice of sources; Classic and Compact layouts</li><li><b>Five visualizers</b> and an ambient glow from the album art</li><li><b>Live lyrics:</b> the line being sung, on the closed notch</li><li><b>Media exclusions:</b> apps or sites that never take over the notch</li></ul>
 
 </details>
 <details><summary><b>Notch views and alerts</b></summary>
@@ -267,7 +276,7 @@ On a tall screen, every design grows: more rows of pins, at the same icon size. 
 </details>
 <details><summary><b>Icon packs</b></summary>
 
-<ul><li><b>Seven built in:</b> Cloud, Round, Squircle, Glass, Mono, White, Tinted; System icons puts it all back</li><li><b>Load your own:</b> PNG, ICO or a Resource Redirect pack from a folder, read as pictures, nothing runs</li><li><b>Apply to Windows too:</b> off by default; folders, drives, This PC, Recycle Bin, Network and common file types in File Explorer</li><li><b>Put Windows icons back</b> restores every original exactly</li></ul>
+<ul><li><b>Built in:</b> the Cloud set, and six styles: Round, Squircle, Glass, Mono, White, Tinted; System icons puts it all back</li><li><b>Load your own:</b> PNG, ICO or a Resource Redirect pack from a folder, read as pictures, nothing runs</li><li><b>Apply to Windows too:</b> off by default; folders, drives, This PC, Recycle Bin, Network and common file types in File Explorer</li><li><b>Put Windows icons back</b> restores every original exactly</li></ul>
 
 </details>
 <details><summary><b>Everything else</b></summary>
