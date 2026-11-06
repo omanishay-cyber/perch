@@ -410,6 +410,94 @@ details.list-group[open] summary::after { transform: rotate(45deg); }
   .finale-plate img { object-position: 74% 50%; }
 }
 
+/* ---------- the calendar: four designs, twelve paintings, four places ---------- */
+.cal { padding-block: clamp(32px, 4vw, 64px) clamp(56px, 7vw, 112px); }
+.cal h3 { font-size: var(--t-2xl); }
+.cal-block { margin-top: clamp(80px, 10vw, 160px); padding-top: clamp(48px, 6vw, 96px); border-top: 1px solid var(--line-strong); }
+
+/* four designs: the tabs are line drawings of each design's own layout */
+.cal-designs { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(16px, 2vw, 32px); margin-top: clamp(40px, 6vw, 96px); align-items: start; }
+.cal-stage { grid-column: 1 / span 9; grid-row: 1; display: grid; }
+.cal-side { grid-column: 10 / span 3; grid-row: 1; display: grid; gap: var(--s-4); }
+.cal-side .six-no { display: block; }
+.cal-side-note { color: var(--ink-soft); font-size: var(--t-sm); padding-top: var(--s-3); border-top: 1px solid var(--line); }
+.cal-tabs { display: grid; gap: var(--s-3); }
+.cal-tab { display: grid; grid-template-columns: 108px minmax(0, 1fr); align-items: center; gap: var(--s-4); padding: 12px; border-radius: 14px; text-align: left; color: var(--ink-soft); box-shadow: inset 0 0 0 1px var(--line); transition: transform 200ms var(--ease), color 200ms var(--ease), background-color 200ms var(--ease); }
+.cal-tab:hover { color: var(--ink); background: var(--bg-2); }
+.cal-tab[aria-selected="true"] { color: var(--ink); background: var(--bg-2); box-shadow: inset 0 0 0 2px var(--accent-text); }
+.cal-tab:focus-visible { outline-offset: 3px; border-radius: 14px; }
+.cal-map { display: block; width: 100%; height: auto; }
+.cal-map .m-dim { opacity: 0.5; }
+.cal-map .m-acc { stroke: var(--accent-text); }
+.cal-map .m-fill { fill: var(--accent-text); }
+.cal-map text { stroke: none; fill: currentColor; font-family: var(--font-display); font-weight: 300; font-size: 54px; }
+.cal-map text.m-acc { fill: var(--accent-text); }
+.cal-tab-text { display: grid; gap: 2px; }
+.cal-tab-no { font-size: var(--t-xs); font-weight: 700; letter-spacing: 0.22em; color: var(--accent-text); }
+.cal-tab-name { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.25rem, 1.05rem + 0.5vw, 1.625rem); line-height: 1.1; }
+.cal-pane { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 360ms var(--ease), visibility 0s linear 360ms; }
+.cal-pane.is-on { opacity: 1; visibility: visible; transition-delay: 0s; }
+.cal-shot { border-radius: 14px; overflow: hidden; background: var(--bg-2); box-shadow: 0 1px 0 rgb(var(--shadow) / 0.06), 0 24px 54px rgb(var(--shadow) / 0.26); }
+.cal-shot img { width: 100%; height: auto; transform: scale(1.015); transition: transform 700ms var(--ease); }
+.cal-pane.is-on .cal-shot img { transform: none; }
+.cal-pane figcaption { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: var(--s-2) var(--s-6); align-items: start; margin-top: var(--s-5); }
+.cal-pane h4 { margin: 0; font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem); line-height: 1; grid-row: span 2; }
+.cal-pane figcaption p { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.3125rem); line-height: 1.42; color: var(--ink-soft); max-width: 34em; }
+.cal-pane .cal-shown { font-size: var(--t-sm); }
+html:not(.js) .cal-side { display: none; }
+html:not(.js) .cal-stage { grid-column: 1 / -1; gap: var(--s-8); }
+html:not(.js) .cal-pane { grid-area: auto; opacity: 1; visibility: visible; }
+
+/* twelve paintings */
+.hcards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(28px, 3vw, 44px) clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 72px); }
+.hcard-pic, .pcard-pic { position: relative; aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: var(--bg-2); box-shadow: 0 1px 0 rgb(var(--shadow) / 0.06), 0 18px 40px rgb(var(--shadow) / 0.22); transition: transform 300ms var(--ease); }
+.hcard-pic::after, .pcard-pic::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--line); pointer-events: none; }
+.hcard-pic img { width: 100%; height: 100%; object-fit: cover; }
+.hcard-when { margin-top: var(--s-4); font-size: var(--t-xs); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); }
+.hcard h4, .pcard h4 { margin: var(--s-1) 0 0; font-size: var(--t-lg); line-height: 1.1; }
+@media (hover: hover) and (pointer: fine) {
+  .hcard:hover .hcard-pic, .pcard:hover .pcard-pic { transform: translateY(-6px); }
+}
+
+/* four places: one painting, three hours, crossfaded */
+.cal-clock { margin-top: var(--s-5); font-family: var(--font-display); font-weight: 300; font-size: var(--t-lg); line-height: 1.2; }
+.pcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 3vw, 44px) clamp(16px, 2vw, 32px); margin-top: clamp(32px, 4vw, 56px); }
+.pcard h4 { margin-top: var(--s-4); }
+.pcard-pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 900ms var(--ease); }
+.pcard-pic img.is-on { opacity: 1; }
+.pcard-hours { position: absolute; z-index: 1; left: 12px; bottom: 12px; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--dock-bg); border: 1px solid var(--dock-line); backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3); }
+.pcard-hours button { min-height: 34px; padding: 0 14px; border-radius: 999px; font-size: var(--t-sm); font-weight: 700; color: var(--ink); transition: color 200ms var(--ease), background-color 200ms var(--ease); }
+.pcard-hours button:not([aria-pressed="true"]):hover { background: var(--line-strong); }
+.pcard-hours button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.pcard-hours button:focus-visible { outline-offset: 2px; border-radius: 999px; }
+html:not(.js) .pcard-hours { display: none; }
+
+@media (max-width: 1100px) {
+  .cal-side { grid-column: 1 / -1; grid-row: 1; }
+  .cal-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cal-stage { grid-column: 1 / -1; grid-row: 2; }
+  .cal-tab { grid-template-columns: minmax(0, 1fr); gap: var(--s-2); }
+  .hcards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .cal-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2); }
+  .cal-tab { padding: 10px; }
+  .cal-pane figcaption { grid-template-columns: minmax(0, 1fr); }
+  .cal-pane h4 { grid-row: auto; }
+  .hcards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6) var(--s-3); }
+  .hcard h4 { font-size: var(--t-md); }
+  .pcards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cal-tab, .hcard-pic, .pcard-pic, .cal-shot img { transition: none !important; transform: none !important; }
+  .cal-pane { transition: opacity 150ms linear, visibility 0s linear 150ms; }
+  .pcard-pic img { transition: opacity 200ms linear; }
+}
+@media (forced-colors: active) {
+  .cal-tab { border: 1px solid CanvasText; }
+  .cal-tab[aria-selected="true"], .pcard-hours button[aria-pressed="true"] { outline: 2px solid Highlight; }
+}
+
 /* ---------- reduced motion: fades stay, movement goes ---------- */
 @media (prefers-reduced-motion: reduce) {
   .js .rise, .js .rv { transform: none; transition: opacity 240ms linear; transition-delay: 0ms; }

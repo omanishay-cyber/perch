@@ -16,6 +16,8 @@ Window" by Lumen Fields, weather for Oakland). No picture holds anyone's real fi
 | `img/c-six-*` | The six new designs, large, dark and light | Site, README |
 | `img/c-i-*` | File Explorer before and after, and folders in Cloud | Site, README |
 | `img/c-cal-*`, `c-n-cal-christmas`, `h-calendar` | The calendar (since 1.1.6), dark and light: Christmas in Almanac, New Year's Day in Lantern Thread, Thanksgiving in Festival Light, the Fourth of July in Night River, a free day's painted place in the evening (`c-cal-place`: night on dark, dusk on light) and by day (`c-cal-day`), and the notch opener (`h-calendar`, Night River in October, see-through). Shot from the app's calendar lab at 1.1.6 with US holidays only and no faith chosen, on the night and dawn plates, the second clock set to London | Site: notch chapter, README (smaller copies in `readme/`) |
+| `img/cal-h-*` | Twelve American holiday paintings from the app (New Year's Day, Valentine's Day, Washington's Birthday, St. Patrick's Day, Memorial Day, Father's Day, Independence Day, Halloween, Veterans Day, Thanksgiving, Christmas Eve, Christmas Day), dark and `-light`, copied from the app's own calendar art, cropped to the painted right side, 800 x 500 | Site: calendar, the paintings |
+| `img/cal-p-*` | Four free-day places from the app (lighthouse cove, covered bridge, red mesa, snow cabin), each `-day`, `-dusk` and `-night`, cropped to 1024 x 640 | Site: calendar, the places |
 | `img/c-d-*` | The 12 notch designs, closed above open | Site: card stack |
 | `img/c-p-*`, `c-v-*` | The palettes and the five visualizers | Site: card stacks |
 | `readme/b-*` | README banners with headlines, light and dark pairs, the Download button | README |

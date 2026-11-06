@@ -234,4 +234,55 @@
     }
   }
   $$("[data-fan]").forEach(setupFan);
+
+  /* ---------- the calendar's four designs: tabs drawn as each layout, the real picture crossfades ---------- */
+  $$("[data-cal-designs]").forEach(function (box) {
+    var tabs = $$('[role="tab"]', box);
+    function pick(i, focus) {
+      i = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        var pane = doc.getElementById(t.getAttribute("aria-controls"));
+        if (pane) pane.classList.toggle("is-on", on);
+      });
+      if (focus) tabs[i].focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { pick(i); });
+      t.addEventListener("keydown", function (e) {
+        var k = e.key;
+        if (k === "ArrowDown" || k === "ArrowRight") { e.preventDefault(); pick(i + 1, true); }
+        else if (k === "ArrowUp" || k === "ArrowLeft") { e.preventDefault(); pick(i - 1, true); }
+        else if (k === "Home") { e.preventDefault(); pick(0, true); }
+        else if (k === "End") { e.preventDefault(); pick(tabs.length - 1, true); }
+      });
+    });
+  });
+
+  /* ---------- free-day places: day, dusk or night, opening on the visitor's own hour as the app does ---------- */
+  var places = $("[data-places]");
+  if (places) {
+    var cards = $$(".pcard", places), chosen = false;
+    function show(card, look) {
+      $$("img[data-look]", card).forEach(function (im) { im.classList.toggle("is-on", im.getAttribute("data-look") === look); });
+      $$("button[data-look]", card).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-look") === look)); });
+    }
+    function byClock() {
+      var h = new Date().getHours();
+      if (h >= 6 && h < 18) return "day";
+      return root.classList.contains("dark") ? "night" : "dusk";
+    }
+    function follow() { if (!chosen) cards.forEach(function (c) { show(c, byClock()); }); }
+    cards.forEach(function (card) {
+      $$("button[data-look]", card).forEach(function (b) {
+        b.addEventListener("click", function () { chosen = true; show(card, b.getAttribute("data-look")); });
+      });
+    });
+    follow();
+    new MutationObserver(follow).observe(root, { attributes: true, attributeFilter: ["class"] });
+    var note = $("[data-places-note]");
+    if (note) note.textContent = "Here are four of them, painted for the hour on your clock. Pick another hour.";
+  }
 })();

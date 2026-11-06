@@ -111,6 +111,8 @@ Open the notch on its calendar and it starts on today. It begins with the holida
 
 **By day.** From six in the morning, the same place is painted in daylight. Every one of the 60 comes as day, dusk and night.
 
+The [website](https://omanishay-cyber.github.io/perch/#calendar) puts the four designs side by side, with twelve of the holiday paintings and four places by day, at dusk and by night.
+
 Your own events show too. Settings walks you through getting the link from Google Calendar, Outlook or iCloud, step by step. Perch only reads it, and checks for new events every 15 minutes. The panel comes in Normal or Small. Public holidays and observances show at first; religious days are one switch away. No faith is chosen until you pick one; pick one and its days lead the month.
 
 ## The dock
