@@ -50,9 +50,12 @@
     }, { threshold: [0, 0.72, 1] }).observe(hero);
   }
   if (wrap && finePointer.matches) {
-    var isl = $(".island", wrap);
-    isl.addEventListener("pointerenter", function () { clearTimeout(hoverTimer); hoverTimer = setTimeout(function () { hovering = true; syncIsland(); }, 140); });
-    isl.addEventListener("pointerleave", function () { clearTimeout(hoverTimer); hoverTimer = setTimeout(function () { hovering = false; syncIsland(); }, 260); });
+    var isl = $(".island", wrap), parked = false;
+    isl.addEventListener("pointerenter", function () { clearTimeout(hoverTimer); if (parked) return; hoverTimer = setTimeout(function () { hovering = true; syncIsland(); }, 140); });
+    isl.addEventListener("pointerleave", function () { clearTimeout(hoverTimer); parked = false; hoverTimer = setTimeout(function () { hovering = false; syncIsland(); }, 260); });
+    /* A link in the bar takes you to a section: the panel closes so it does not cover that section,
+       and stays closed until the pointer leaves the bar and comes back. */
+    $$(".island-nav a", wrap).forEach(function (a) { a.addEventListener("click", function () { clearTimeout(hoverTimer); parked = true; hovering = false; syncIsland(); }); });
   }
   var menuBtn = $("[data-menu]");
   if (menuBtn && wrap) {
