@@ -259,6 +259,15 @@
         else if (k === "End") { e.preventDefault(); pick(tabs.length - 1, true); }
       });
     });
+    // on a phone the picture pans sideways, so it takes keyboard focus there and the arrow keys move it
+    var shots = $$(".cal-shot", box), narrow = matchMedia("(max-width: 700px)");
+    function pans() {
+      shots.forEach(function (s) {
+        if (narrow.matches) s.tabIndex = 0; else s.removeAttribute("tabindex");
+      });
+    }
+    pans();
+    narrow.addEventListener("change", pans);
   });
 
   /* ---------- free-day places: day, dusk or night, opening on the visitor's own hour as the app does ---------- */

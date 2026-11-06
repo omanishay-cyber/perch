@@ -447,6 +447,21 @@ details.list-group[open] summary::after { transform: rotate(45deg); }
 html:not(.js) .cal-side { display: none; }
 html:not(.js) .cal-stage { grid-column: 1 / -1; gap: var(--s-8); }
 html:not(.js) .cal-pane { grid-area: auto; opacity: 1; visibility: visible; }
+.cal-pan { display: none; }
+/* wide screens: the caption runs on the same twelve columns, so the name, the sentence and "Shown" fill the row under the picture and the tabs */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 1101px) {
+    html.js .cal-designs { grid-template-rows: auto auto; row-gap: var(--s-6); }
+    html.js .cal-side { position: relative; z-index: 1; align-self: start; }
+    html.js .cal-stage { grid-column: 1 / -1; grid-row: 1 / span 2; grid-template-columns: subgrid; grid-template-rows: subgrid; }
+    html.js .cal-pane { grid-column: 1 / -1; grid-row: 1 / -1; display: grid; grid-template-columns: subgrid; grid-template-rows: subgrid; }
+    html.js .cal-shot { grid-column: 1 / span 9; grid-row: 1; align-self: start; }
+    html.js .cal-pane figcaption { grid-column: 1 / -1; grid-row: 2; grid-template-columns: subgrid; column-gap: normal; margin-top: 0; align-items: start; }
+    html.js .cal-pane h4 { grid-column: 1 / span 3; grid-row: 1; }
+    html.js .cal-pane figcaption p { grid-column: 4 / span 6; grid-row: 1; }
+    html.js .cal-pane .cal-shown { grid-column: 10 / span 3; grid-row: 1; padding-top: var(--s-3); border-top: 1px solid var(--line); color: var(--ink-soft); }
+  }
+}
 
 /* twelve paintings */
 .hcards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(28px, 3vw, 44px) clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 72px); }
@@ -484,6 +499,12 @@ html:not(.js) .pcard-hours { display: none; }
   .cal-tab { padding: 10px; }
   .cal-pane figcaption { grid-template-columns: minmax(0, 1fr); }
   .cal-pane h4 { grid-row: auto; }
+  /* phones: the panel itself at a readable size, cropped to its edges, panned sideways */
+  .cal-shot { --shot: 1040px; display: flex; align-items: flex-start; height: calc(var(--shot) * 496 / 1400); overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: thin; }
+  .cal-stage { grid-template-columns: minmax(0, 1fr); }
+  .cal-shot img { flex: none; width: calc(var(--shot) * 1260 / 1400); height: calc(var(--shot) * 610 / 1400); max-width: none; object-fit: cover; object-position: 50% 0; margin-top: calc(var(--shot) * -4 / 1400); }
+  .cal-shot:focus-visible { outline-offset: 3px; border-radius: 14px; }
+  .cal-pan { display: block; margin-top: var(--s-3); font-size: var(--t-sm); color: var(--ink-soft); }
   .hcards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6) var(--s-3); }
   .hcard h4 { font-size: var(--t-md); }
   .pcards { grid-template-columns: minmax(0, 1fr); }
