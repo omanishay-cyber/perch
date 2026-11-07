@@ -1,0 +1,1 @@
+Holiday designs for Perch. Data and pictures only, no programs. Perch downloads the files for a country only when that country is picked, and checks each one against the signed list: a pack by its line in the list, a WebP picture by its line in the pack.
