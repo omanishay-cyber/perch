@@ -4,7 +4,7 @@
 
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.8-4191E1?style=flat-square" alt="Version 1.1.8"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
+<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.9-4191E1?style=flat-square" alt="Version 1.1.9"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
 
 <p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-118">New in 1.1.8</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
 
@@ -12,8 +12,9 @@ Perch sits on top of Windows and replaces the three things you look at all day. 
 
 **12** notch designs · **4** calendar designs · **18** Start menu designs in **29** flavors · **3** dock styles · **6** icon styles and the Cloud set · **10** palettes · **2** looks · **$0**, at home or at work
 
-## New in 1.1.8
+## New in 1.1.9
 
+- 1.1.9: no blank strip under a wide window's preview; files from the shelf and dock open with your normal rights; new Labour Day and day-after-Thanksgiving pictures; calendar packs that update by themselves, checked by signature.
 - 1.1.8: dock clicks work again on Windows 10.
 
 - **A calendar in the notch.** The holidays of any country, or several at once, in four designs: Night River, Almanac, Festival Light and Lantern Thread.
