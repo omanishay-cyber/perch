@@ -4,16 +4,17 @@
 
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.10-4191E1?style=flat-square" alt="Version 1.1.10"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
+<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.11-4191E1?style=flat-square" alt="Version 1.1.11"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
 
 <p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-118">New in 1.1.8</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
 
 Perch sits on top of Windows and replaces the three things you look at all day. The taskbar becomes a dock. The empty strip at the top of your screen becomes a notch that shows the time, the weather, your music and how your PC is doing. The Start button opens a menu of its own. Your apps, files and settings stay exactly where they are.
 
-**12** notch designs · **4** calendar designs · **18** Start menu designs in **29** flavors · **3** dock styles · **6** icon styles and the Cloud set · **10** palettes · **2** looks · **$0**, at home or at work
+**33** notch designs · **21** whole themes · **4** calendar designs · **94** Start menu designs in **105** flavors · **3** dock styles · **6** icon styles and the Cloud set · **10** palettes · **2** looks · **$0**, at home or at work
 
-## New in 1.1.10
+## New in 1.1.11
 
+- 1.1.11: 94 Start menu designs (Windows XP, Tahoe Launcher, Metro 10 and many glass designs), the Apps, Professional and Launcher styles with your own tabs and groups, a Widgets page in Start, 21 whole themes, a dock on the left or right with app groups and folder menus, Windows' own right-click choices such as Run as administrator, new quick settings tiles, Windows 10 tray icons in the dock, and many speed and safety fixes.
 - 1.1.10: a smoother mouse and keyboard, faster screenshots, four new calendar designs (Still Water, The Gazette, Frost Pane, Arch Window), a Surprise me calendar, painted weather skies, Peek on dock previews, and safety fixes.
 - 1.1.9: no blank strip under a wide window's preview; files from the shelf and dock open with your normal rights; new Labour Day and day-after-Thanksgiving pictures; calendar packs that update by themselves, checked by signature.
 - 1.1.8: dock clicks work again on Windows 10.
@@ -249,7 +250,7 @@ The styles:
 | Music with album art and a visualizer | A small media flyout | **A full player, five visualizers, live lyrics** |
 | Volume per app | A Settings page or the mixer | **In the notch** |
 | A timer and a stopwatch | The Clock app | **In the notch** |
-| Start menu designs | 1 | **18, in 29 flavors** |
+| Start menu designs | 1 | **94, in 105 flavors** |
 | Icon sets | 1 | **7 built in, or load your own** |
 | Price | Comes with Windows | **Free** |
 
@@ -272,7 +273,7 @@ The styles:
 </details>
 <details><summary><b>The Start menu</b></summary>
 
-<ul><li><b>18 designs, 29 flavors,</b> one click each, always opening in the middle</li><li><b>Search:</b> apps, files, folders, Windows Settings pages, tools and the web, with filter chips and a preview pane</li><li><b>Calculator:</b> <code>12*7</code>, <code>(3.5*4)^2</code>, <code>200*15%</code>; Enter copies the answer</li><li><b>Unit converter:</b> <code>10 km to mi</code>, <code>5kg in lb</code>, <code>100 f to c</code></li><li><b>Run box:</b> type <code>regedit</code> or a path, press Enter</li><li><b>Jump lists</b> for each app on a right-click</li><li><b>Pinned folders:</b> drop one pin on another; rename, take apart, reorder</li><li><b>Suggested now:</b> the apps you open at this hour, weekdays apart from weekends; old habits fade</li><li><b>Most used,</b> Recommended files and newly installed apps</li><li><b>Widgets strip:</b> weather, your default printer, today's files</li><li><b>All apps</b> with folders and a grid to jump to any letter</li><li><b>Keyboard:</b> arrows follow what is on screen; type to search; Esc always goes back</li><li><b>Grows with the screen:</b> more rows on a tall monitor, at the same icon size</li><li><b>Size</b> from 50% to 130%, <b>opacity</b> from 10% to solid, frosted glass on or off</li></ul>
+<ul><li><b>94 designs, 105 flavors,</b> one click each, always opening in the middle</li><li><b>Search:</b> apps, files, folders, Windows Settings pages, tools and the web, with filter chips and a preview pane</li><li><b>Calculator:</b> <code>12*7</code>, <code>(3.5*4)^2</code>, <code>200*15%</code>; Enter copies the answer</li><li><b>Unit converter:</b> <code>10 km to mi</code>, <code>5kg in lb</code>, <code>100 f to c</code></li><li><b>Run box:</b> type <code>regedit</code> or a path, press Enter</li><li><b>Jump lists</b> for each app on a right-click</li><li><b>Pinned folders:</b> drop one pin on another; rename, take apart, reorder</li><li><b>Suggested now:</b> the apps you open at this hour, weekdays apart from weekends; old habits fade</li><li><b>Most used,</b> Recommended files and newly installed apps</li><li><b>Widgets strip:</b> weather, your default printer, today's files</li><li><b>All apps</b> with folders and a grid to jump to any letter</li><li><b>Keyboard:</b> arrows follow what is on screen; type to search; Esc always goes back</li><li><b>Grows with the screen:</b> more rows on a tall monitor, at the same icon size</li><li><b>Size</b> from 50% to 130%, <b>opacity</b> from 10% to solid, frosted glass on or off</li></ul>
 
 </details>
 <details><summary><b>Looks</b></summary>

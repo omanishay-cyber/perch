@@ -117,3 +117,9 @@ Plain words, newest first, three headings at most:
 The site is in `docs/`. GitHub Pages serves it from the `main` branch, folder `/docs`
 (Settings > Pages > Build and deployment > Deploy from a branch). Its address is
 `https://omanishay-cyber.github.io/perch/`.
+
+## 8. Releases
+
+| Tag | What it brought |
+|---|---|
+| `v1.1.11` | 94 Start menu designs, 21 whole themes, a side dock with app groups, Windows' own right-click choices, new quick settings tiles, and many fixes |
