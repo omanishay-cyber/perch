@@ -312,6 +312,10 @@ details.list-group[open] summary::after { transform: rotate(45deg); }
 .foot ul { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); }
 .foot a { color: var(--ink-soft); text-underline-offset: 3px; }
 .foot a:hover { color: var(--ink); }
+.foot-credits { margin-top: var(--s-4); font-size: var(--t-xs, 0.8rem); line-height: 1.6; color: var(--ink-soft); }
+.foot-credits span { margin-right: var(--s-3); }
+.foot-credits b { font-weight: 600; }
+.foot-credits a { white-space: nowrap; }
 
 /* ---------- scroll reveal ---------- */
 .js .rv { opacity: 0; transform: translateY(22px); transition: opacity 800ms var(--ease), transform 1000ms var(--ease); }
