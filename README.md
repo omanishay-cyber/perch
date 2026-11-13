@@ -2,18 +2,21 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="docs/assets/readme/b-banner-light.webp"><img src="docs/assets/readme/b-banner.webp" alt="Perch: the Windows taskbar, reconsidered. The real notch opened at the top of the screen and the real dock at the bottom, over a mountain lake at night." width="100%"></picture></p>
 
+<p align="center"><a href="https://omanishay-cyber.github.io/perch/#film"><img src="docs/assets/readme/b-film.webp" alt="Perch in 17 seconds: the dock grows under the cursor, becomes the notch, the notch opens into music, the Start menu designs fly past in 3D, one tap changes the whole look." width="100%"></a></p>
+
 <p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest/download/Perch-Setup.exe"><img src="docs/assets/readme/b-button.webp" alt="Download for Windows" width="340"></a></p>
 
-<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.11-4191E1?style=flat-square" alt="Version 1.1.11"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
+<p align="center"><a href="https://github.com/omanishay-cyber/perch/releases/latest"><img src="https://img.shields.io/badge/version-1.1.12-4191E1?style=flat-square" alt="Version 1.1.12"></a> <img src="https://img.shields.io/badge/Windows%2011-supported-41E1B5?style=flat-square" alt="Windows 11 supported"> <img src="https://img.shields.io/badge/Windows%2010%2022H2-supported-41E1B5?style=flat-square" alt="Windows 10 22H2 supported"> <img src="https://img.shields.io/badge/price-free-22D3EE?style=flat-square" alt="Free"> <a href="https://github.com/omanishay-cyber/perch/releases"><img src="https://img.shields.io/github/downloads/omanishay-cyber/perch/total?style=flat-square&label=downloads&color=4191E1" alt="Downloads"></a></p>
 
-<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-118">New in 1.1.8</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
+<p align="center"><a href="https://omanishay-cyber.github.io/perch/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/releases/latest">Release notes</a> &nbsp;·&nbsp; <a href="#new-in-1112">New in 1.1.12</a> &nbsp;·&nbsp; <a href="#icon-packs">Icon packs</a> &nbsp;·&nbsp; <a href="#everything-in-11">Every feature</a> &nbsp;·&nbsp; <a href="https://github.com/omanishay-cyber/perch/issues/new/choose">Report a bug</a></p>
 
 Perch sits on top of Windows and replaces the three things you look at all day. The taskbar becomes a dock. The empty strip at the top of your screen becomes a notch that shows the time, the weather, your music and how your PC is doing. The Start button opens a menu of its own. Your apps, files and settings stay exactly where they are.
 
 **33** notch designs · **21** whole themes · **4** calendar designs · **94** Start menu designs in **105** flavors · **3** dock styles · **6** icon styles and the Cloud set · **10** palettes · **2** looks · **$0**, at home or at work
 
-## New in 1.1.11
+## New in 1.1.12
 
+- 1.1.12: screenshots taken one after another are fast again, and an old "Image copied" card no longer shows up late.
 - 1.1.11: 94 Start menu designs (Windows XP, Tahoe Launcher, Metro 10 and many glass designs), the Apps, Professional and Launcher styles with your own tabs and groups, a Widgets page in Start, 21 whole themes, a dock on the left or right with app groups and folder menus, Windows' own right-click choices such as Run as administrator, new quick settings tiles, Windows 10 tray icons in the dock, and many speed and safety fixes.
 - 1.1.10: a smoother mouse and keyboard, faster screenshots, four new calendar designs (Still Water, The Gazette, Frost Pane, Arch Window), a Surprise me calendar, painted weather skies, Peek on dock previews, and safety fixes.
 - 1.1.9: no blank strip under a wide window's preview; files from the shelf and dock open with your normal rights; new Labour Day and day-after-Thanksgiving pictures; calendar packs that update by themselves, checked by signature.
